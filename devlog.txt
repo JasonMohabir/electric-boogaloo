@@ -1,1 +1,10 @@
+DEVLOG for SANDSTORY 3D
+
+SA = Shaik Abiden
+JM = Jason Mohabir
+SS = Sandstory
+
+~/--------------------------------------------[Monday 1/11/16]-----------------------------------------------------/~
+- SA created the sandstory.java; the main driver file for SS
+- Added a start menu and a difficulty selector
 
