@@ -8,3 +8,5 @@ SS = Sandstory
 - SA created the sandstory.java; the main driver file for SS
 - Added a start menu and a difficulty selector
 
+~/--------------------------------------------[Tuesday 1/12/16]-----------------------------------------------------/~
+- JM created Camel, Character, Equip, Town, Zone
