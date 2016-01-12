@@ -10,3 +10,6 @@ SS = Sandstory
 
 ~/--------------------------------------------[Tuesday 1/12/16]-----------------------------------------------------/~
 - JM created Camel, Character, Equip, Town, Zone
+- SA created classes Warrior, Mage, and Rogue
+- SA overwrote toStrings and gave base stats to the three base classes
+- SA finished base character creation in sandstory.java
