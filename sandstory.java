@@ -29,6 +29,16 @@ public class sandstory{
 	System.out.println("Choose a name for you character:");
 	String name = Keyboard.readString();
         int classnum = chooseclass();
+	if (classnum == 1){
+	    chrtr = new Warrior(name);
+	}
+	if (classnum == 2){
+	    chrtr = new Mage(name);
+	}
+	if (classnum == 3){
+	    chrtr = new Rogue(name);
+	}
+	System.out.println(chrtr);
     }
 
 

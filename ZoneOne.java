@@ -1,9 +1,10 @@
+import cs1.Keyboard;
 public class ZoneOne extends Zone {
 
 
     // make automated ZoneOne
     // creates the monster, that will attack 
-    public class play(){
+    public void play(){
 	System.out.println("You are restless in the night. And drift off to sleep.");
 	System.out.println("You imagine the adventures that will potential take place!");
 	System.out.println("Your Camel and you are exploring the great DREAM DESERT.");
