@@ -2,7 +2,36 @@ import cs1.Keyboard;
 public class sandstory{
     //1 is easy, 2 is medium, 3 is hard, 4 is hump-less camel mode
     static int difficulty;
+    static Character chrtr;
     
+    public static int chooseclass(){
+	System.out.println("Choose a class for you character:");
+	System.out.println("\n1 - Warrior");
+	System.out.println("\n2 - Mage");
+	System.out.println("\n3 - Rouge");
+	String input = Keyboard.readString();
+	if (input.equals("1")){
+	    return 1;
+	}
+	else if (input.equals("2")){
+	    return 2;
+	}	
+	else if (input.equals("3")){
+	    return 3;
+	}
+	else{
+	    System.out.println("invalid input\n\n");
+	    return chooseclass();
+	}
+    }
+
+    public static void createchar(){
+	System.out.println("Choose a name for you character:");
+	String name = Keyboard.readString();
+        int classnum = chooseclass();
+    }
+
+
     public static void choosedif(){
 	String input = Keyboard.readString();
 	if (input.equals("1")){
@@ -39,7 +68,7 @@ public class sandstory{
     public static  void play(){
 	System.out.println(" \n\n =+++++++++++++++++++++++++++++++++++++++++=\n\n Welcome to Sand Story 3D\n Note that this game is not in 3D\n\n Sand Story 3D: A tale of friendship, hardship , and sand.\n\n Type 'Start' to begin\n\n ");
 	start();
-	System.out.println(difficulty);
+        createchar();
     }
     public static void main (String [] args){
 	play();

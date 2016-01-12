@@ -1,7 +1,7 @@
-public class abstract Zone {
+public abstract class Zone {
     int length;
     int difficulty;
     int encChance;
     
-    public void play();
+    public abstract void play();
 }
