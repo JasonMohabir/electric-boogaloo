@@ -45,7 +45,6 @@ public class ZoneOne extends Zone {
 
     public void attacked(){
 	System.out.println("What is that! A Sand Beatle appears!");
-	Monster test = new Monster();
 	System.out.println("You are going to need to fight.");
 	// Camel.battle(test);
     }
