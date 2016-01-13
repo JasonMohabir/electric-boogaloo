@@ -1,4 +1,4 @@
-public abstract class Monster extends Character {
+public abstract class Monster {
 
     public Monster(){
 	super(150,((int)(Math.random() * 25 ) + 20),20,2.5);
