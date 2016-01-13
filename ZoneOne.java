@@ -1,4 +1,9 @@
 import cs1.Keyboard;
+
+// DREAM DESERT tutorial
+// Goals: Battle with a random monster, attack the monster, open your inventory, use a potion, use a power up, defeat the monster, gain experience points
+
+
 public class ZoneOne extends Zone {
 
     // make automated ZoneOne

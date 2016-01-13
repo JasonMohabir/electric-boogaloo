@@ -7,8 +7,6 @@ public abstract class Character {
     protected final int STRENGTH, DEFENSE;
     protected final double ATTACKRATING;
 
-    public abstract void battle(Character c);
-
     // Constructor
     public Character(int h, int s, int d, double a){
 	setHealth(h);
