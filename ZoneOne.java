@@ -1,7 +1,6 @@
 import cs1.Keyboard;
 public class ZoneOne extends Zone {
 
-
     // make automated ZoneOne
     // creates the monster, that will attack 
     public void play(){
@@ -17,25 +16,37 @@ public class ZoneOne extends Zone {
 	String input = Keyboard.readString();
 	if (input.equals("1")){
 	    System.out.print("The sand slips through the hooves the sand steed.");
-	    // move();
+	    attacked();
+	    prompt();
 	}
 	if (input.equals("2")){
 	    System.out.print("You ruffle through your bag.");
 	    // inventoryDisplay();
+	    prompt();
 	}
 	if (input.equals("3")){
 	    System.out.println("The heavens spell out in Comic Sans font:\n \" Lol m8 you tried \"");
 	    prompt();
 	}
 	if (input.equals("4")){
-	    System.out.println("The camel dies.");
+	    System.out.println("The camel is silent");
+	    prompt();
 	}
 	else {
 	    System.out.println("Try again");
 	    prompt();
 	}
     }   
+
+    public void attacked(){
+	System.out.println("What is that! A Sand Beatle appears!");
+	Monster test = new Monster();
+	System.out.println("You are going to need to fight.");
+	// Camel.battle(test);
+    }
+
 }
+
 
 
 
