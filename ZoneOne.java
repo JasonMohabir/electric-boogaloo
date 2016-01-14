@@ -5,6 +5,11 @@ import cs1.Keyboard;
 
 
 public class ZoneOne extends Zone {
+    Character chara;
+    
+    public ZoneOne(Character ch){
+	chara = ch;
+    }
 
     // make automated ZoneOne
     // creates the monster, that will attack 
@@ -46,7 +51,9 @@ public class ZoneOne extends Zone {
 
     public void attacked(){
 	System.out.println("What is that! A Sand Beatle appears!");
+	Monster en1 = new Sandbeetle(); 
 	System.out.println("You are going to need to fight.");
+	chara.battle(en1);
 	// Camel.battle(test);
     }
 

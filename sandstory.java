@@ -79,7 +79,7 @@ public class sandstory{
 	System.out.println(" \n\n =+++++++++++++++++++++++++++++++++++++++++=\n\n Welcome to Sand Story 3D\n Note that this game is not in 3D\n\n Sand Story 3D: A tale of friendship, hardship , and sand.\n\n Type 'Start' to begin\n\n ");
 	start();
         createchar();
-	Zone z1 = new ZoneOne();
+	Zone z1 = new ZoneOne(chrtr);
 	z1.play();
     }
     public static void main (String [] args){
