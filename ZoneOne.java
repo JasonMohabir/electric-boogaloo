@@ -18,6 +18,7 @@ public class ZoneOne extends Zone {
     public void prompt(){
 	
 	String prompt = "Choose your action:\n1 - Explore the desert\n2 - Check your inventory\n3 - Look up to the heavens\n4 - Talk to your sand steed.";
+	System.out.println(prompt);
 	String input = Keyboard.readString();
 	if (input.equals("1")){
 	    System.out.print("The sand slips through the hooves the sand steed.");

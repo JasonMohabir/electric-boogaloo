@@ -1,10 +1,10 @@
 import cs1.Keyboard;
 public class sandstory{
     //1 is easy, 2 is medium, 3 is hard, 4 is hump-less camel mode
-    static int difficulty;
-    static Character chrtr;
+     int difficulty;
+     Character chrtr;
     
-    public static int chooseclass(){
+    public  int chooseclass(){
 	System.out.println("Choose a class for you character:");
 	System.out.println("\n1 - Warrior");
 	System.out.println("\n2 - Mage");
@@ -25,7 +25,7 @@ public class sandstory{
 	}
     }
 
-    public static void createchar(){
+    public  void createchar(){
 	System.out.println("Choose a name for you character:");
 	String name = Keyboard.readString();
         int classnum = chooseclass();
@@ -42,7 +42,7 @@ public class sandstory{
     }
 
 
-    public static void choosedif(){
+    public  void choosedif(){
 	String input = Keyboard.readString();
 	if (input.equals("1")){
 	    difficulty = 1;
@@ -63,7 +63,7 @@ public class sandstory{
 	}
     }
     
-    public static void start(){
+    public  void start(){
 	String input = Keyboard.readString();
 	if (input.equals("Start")){
 	    System.out.println("Okay boss. Select difficulty:\n 1 - Easy\n 2 - Medium\n 3 - Hard\n 4 - Humpless Camel");
@@ -75,12 +75,15 @@ public class sandstory{
 	}
     }
 
-    public static  void play(){
+    public   void play(){
 	System.out.println(" \n\n =+++++++++++++++++++++++++++++++++++++++++=\n\n Welcome to Sand Story 3D\n Note that this game is not in 3D\n\n Sand Story 3D: A tale of friendship, hardship , and sand.\n\n Type 'Start' to begin\n\n ");
 	start();
         createchar();
+	Zone z1 = new ZoneOne();
+	z1.play();
     }
     public static void main (String [] args){
-	play();
+	sandstory newgame = new sandstory();
+	newgame.play();
     }
 }
