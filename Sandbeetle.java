@@ -9,8 +9,5 @@ public class Sandbeetle extends Monster{
 	luck = 1;
     }
     
-    public void attack(Character ch){ 
-	ch.lowerHp(10);
-    }
 	
 }

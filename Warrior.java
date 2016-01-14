@@ -14,18 +14,36 @@ public class Warrior extends Character{
     }
     
     public void attack(Monster m){
-	m.lowerHp(10);
+	int dmg = 10;
+	System.out.println("Your towering strength produces " + dmg + " Damage\n");
+	m.lowerHp(dmg);
     }
 
     public void DisplayHealth(Monster m){
-	System.out.println(name + "'s HP: " + hp + "t\t\t\t\t\t\t\t Enemy's HP: " + m.getHp());
+	System.out.println(name + "'s HP: " + hp + "\t\t\t\t\t\t\t Enemy's HP: " + m.getHp());
     }
 	
     public void action(Monster m){
-	System.out.println("1 - Attack");
+	System.out.println("1 - Basic Attack");
+	System.out.println("2 - Use a Skill");
+	System.out.println("3 - Use an Item");
+	System.out.println("4 - Run away");
 	String input = Keyboard.readString();
 	if (input.equals("1")){
+	    System.out.println("Your majestic blade bathes in crimson as you dig the blade into your foe");
 	    attack(m);
+	}
+	else if (input.equals("2")){
+	    System.out.println("Under development. Please understand fam");
+	    action(m);
+	}
+	else if (input.equals("3")){
+	    System.out.println("Under development. Please understand fam");
+	    action(m);
+	}
+	else if (input.equals("4")){
+	    System.out.println("Under development. Please understand fam");
+	    action(m);
 	}
 	else{
 	    System.out.println("Invalid input");
