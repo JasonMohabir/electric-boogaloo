@@ -13,3 +13,7 @@ SS = Sandstory
 - SA created classes Warrior, Mage, and Rogue
 - SA overwrote toStrings and gave base stats to the three base classes
 - SA finished base character creation in sandstory.java
+
+~/--------------------------------------------[Wednesday 1/13/16]-----------------------------------------------------/~
+- SA finished basic mechanics 
+- JM finished ZoneOne
