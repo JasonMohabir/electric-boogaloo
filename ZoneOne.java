@@ -6,7 +6,8 @@ import cs1.Keyboard;
 
 public class ZoneOne extends Zone {
     Character chara;
-    
+    private int moves = 0;
+
     public ZoneOne(Character ch){
 	chara = ch;
     }
@@ -25,9 +26,14 @@ public class ZoneOne extends Zone {
 	String prompt = "Choose your action:\n1 - Explore the desert\n2 - Check your inventory\n3 - Look up to the heavens\n4 - Talk to your sand steed.";
 	System.out.println(prompt);
 	String input = Keyboard.readString();
+
 	if (input.equals("1")){
-	    System.out.print("The sand slips through the hooves the sand steed.");
-	    attacked();
+ 	    System.out.println("The sand slips through the hooves the sand steed.");
+	    if (moves == 0){
+		attacked();
+		exit();
+	    }
+	    else{ System.out.println("The desert is barren, and lifeless. Something tells you to try something else.");}
 	    prompt();
 	}
 	if (input.equals("2")){
@@ -51,12 +57,17 @@ public class ZoneOne extends Zone {
 
     public void attacked(){
 	System.out.println("What is that! A Sand Beatle appears!");
-	Monster en1 = new Sandbeetle(); 
+	Monster en = new Sandbeetle(); 
 	System.out.println("You are going to need to fight.");
-	chara.battle(en1);
-	// Camel.battle(test);
+	chara.battle(en);
+	moves++;
     }
 
+    public void exit(){
+	System.out.println("You are weary from your first encounter with danger. The sun beats down on you. You close your eyes.");
+	System.out.println("You are ready to begin...");
+	System.out.println("SANDSTORY 3D!");
+    }
 }
 
 

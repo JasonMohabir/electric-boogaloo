@@ -1,0 +1,18 @@
+TO-DO for SANSTORY 3D
+
+SA = Shaik Abiden
+JM = Jason Mohabir
+DL = Deadline
+
+// Ranked from most important to least
+1. Finish the game DD:
+2. Implement inventory system
+   2a. ?????
+   2b. Profit!
+3. Finish ZoneOne
+   3a. Update battle system
+   3b. Implement inventory system   
+4. Finish TownOne
+5. Finish Z2, Z3, Z4, Z5
+6. Finsih T2, T3, T4, T5
+
