@@ -37,7 +37,7 @@ public class ZoneOne extends Zone {
 	    prompt();
 	}
 	if (input.equals("2")){
-	    System.out.print("You ruffle through your bag.");
+	    System.out.println("You ruffle through your bag.");
 	    // inventoryDisplay();
 	    prompt();
 	}
