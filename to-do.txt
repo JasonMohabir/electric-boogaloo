@@ -10,6 +10,7 @@ DL = Deadline
    2a. Utilize ArrayList 
    2b. Profit!
 3. Make Plot (DL: 1/19)
+   3a. Make 3 distinct enemies (DL: 1/19)
 4. Create Equipables & Consumables (DL: 1/20)
 5. Finish ZoneOne (DL: 1/19)
    5a. Update battle system
