@@ -1,14 +1,14 @@
 import cs1.Keyboard;
 
-// DREAM DESERT tutorial
+// HUMP HARDLANDS
 // Goals: Battle with a random monster, attack the monster, open your inventory, use a potion, use a power up, defeat the monster, gain experience points
 
 
-public class ZoneOne extends Zone {
+public class ZoneThree extends Zone {
     Character chara;
     private int moves = 0;
 
-    public ZoneOne(Character ch){
+    public ZoneThree(Character ch){
 	chara = ch;
     }
 
@@ -28,7 +28,7 @@ public class ZoneOne extends Zone {
 	String input = Keyboard.readString();
 
 	if (input.equals("1")){
- 	    System.out.println("The sand slips through the hooves the sand steed.");
+	    System.out.println("The sand slips through the hooves the sand steed.");
 	    if (moves == 0){
 		attacked();
 		exit();

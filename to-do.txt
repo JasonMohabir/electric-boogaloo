@@ -5,14 +5,20 @@ JM = Jason Mohabir
 DL = Deadline
 
 // Ranked from most important to least
-1. Finish the game DD:
-2. Implement inventory system
-   2a. ?????
+1. Finish the game...
+2. Implement inventory system (DL: 1/20)
+   2a. Utilize ArrayList 
    2b. Profit!
-3. Finish ZoneOne
-   3a. Update battle system
-   3b. Implement inventory system   
-4. Finish TownOne
-5. Finish Z2, Z3, Z4, Z5
-6. Finsih T2, T3, T4, T5
+3. Make Plot (DL: 1/19)
+4. Create Equipables & Consumables (DL: 1/20)
+5. Finish ZoneOne (DL: 1/19)
+   5a. Update battle system
+6. Finish TownOne (DL: 1/20)
+7. Finish Z2 (DL: 1/21), Z3 (DL: 1/21), Z4 (DL: 1/22), Z5 (DL: 1/22)
+8. Finish T2 (DL: 1/20), T3 (DL: 1/20), T4 (DL: 1/21), T5 (DL: 1/21)
+9. Finish linear play through 
+10. Finish complex play through
+   10a. Enable traveling through various zones
+11. Tweak the game to have story elements
+12. Fix appearance of game
 
