@@ -1,4 +1,3 @@
-import cs1.Keyboard;
 
 public abstract class Zone {
     int length;
