@@ -22,6 +22,9 @@ public abstract class Character {
 	hp = hp - dmg;
     }
 
+    public void autoSkills(){
+    }
+
     //Acessors
     public String getName(){
 	return name;

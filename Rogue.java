@@ -13,6 +13,18 @@ public class Rogue extends Character{
 	luck = 0;
     }
 
+ public void autoSkills(){
+	hp = 80;
+	spmp = 50;
+	tp = 40;
+	str = 4;
+	end = 5;
+	intl = 5;
+	spd = 9;
+	luck = 5;
+    }
+
+
     public void fullHeal(){
 	hp = 80;
     }

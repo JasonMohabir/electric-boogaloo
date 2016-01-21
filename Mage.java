@@ -13,6 +13,17 @@ public class Mage extends Character{
 	luck = 0;
     }
 
+    public void autoSkills(){
+	hp = 70;
+	spmp = 100;
+	tp = 50;
+	str = 2;
+	end = 3;
+	intl = 9;
+	spd = 4;
+	luck = 5;
+    }
+
     public void fullHeal(){
 	hp = 70;
     }

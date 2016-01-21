@@ -12,6 +12,16 @@ public class Warrior extends Character{
 	spd = 0;
 	luck = 0;
     }
+ public void autoSkills(){
+	hp = 100;
+	spmp = 50;
+	tp = 50;
+	str = 9;
+	end = 7;
+	intl = 2;
+	spd = 2;
+	luck = 5;
+    }
     
     public void fullHeal(){
 	hp = 100;
