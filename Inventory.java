@@ -2,7 +2,6 @@ public class Inventory {
 
     int useableSlots, slots = 50;
 
-    /*
     Inventory(){
 	Itemslot[] itemSlot = new Itemslot[slots];
     }
@@ -54,5 +53,5 @@ public class Inventory {
         }
     }
 
-    */
+ 
 }
