@@ -1,4 +1,7 @@
 import cs1.Keyboard;
+
+
+
 public class sandstory{
     //1 is easy, 2 is medium, 3 is hard, 4 is hump-less camel mode
      int difficulty;
