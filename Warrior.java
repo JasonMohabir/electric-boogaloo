@@ -3,14 +3,14 @@ public class Warrior extends Character{
     
     public Warrior(String n){
 	name = n;
-	hp = 100;
-	spmp = 50;
+	hp = 60;
+	spmp = 30;
 	tp = 45;
-	str = 9;
-	end = 8;
-	intl = 3;
-	spd = 4;
-	luck = 5;
+	str = 0;
+	end = 0;
+	intl = 0;
+	spd = 0;
+	luck = 0;
     }
     
     public void fullHeal(){

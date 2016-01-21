@@ -3,26 +3,33 @@ public class Rogue extends Character{
     
     public Rogue (String n){
 	name = n;
-	hp = 80;
-	spmp = 70;
-	tp = 65;
-	str = 7;
-	end = 4;
-	intl = 7;
-	spd = 9;
-	luck = 3;
+	hp = 50;
+	spmp = 40;
+	tp = 50;
+	str = 0;
+	end = 0;
+	intl = 0;
+	spd = 0;
+	luck = 0;
     }
 
     public void fullHeal(){
 	hp = 80;
     }
     
-    public void attack(Monster m){
-	int dmg = 10;
-	System.out.println("Your quick wit strikes first, producing " + dmg + " Damage\n");
-	m.lowerHp(dmg);
+   public void attack(Monster m){
+	double dmg;
+	dmg = (.8 + Math.random() * .2)*((str * .2) + (spd * .2) + (luck * .04));
+	System.out.println("Your quick strikes deal " + dmg + " Damage\n");
+	m.lowerHp((int)dmg);
+	if (Math.random() * 100 <= spd){
+	    System.out.println("Your nimble manuvers and skills let you land a second blow!");
+	    dmg = (.4 + Math.random() * .3)*((str * .4) + (spd * .3) + (luck * .04));
+	    System.out.println("Your second hit deals " + dmg + " Damage\n");
+	    m.lowerHp((int)dmg);
+	}
     }
-
+    
     public void DisplayHealth(Monster m){
 	System.out.println(name + "'s HP: " + hp + "\t\t\t\t\t\t\t Enemy's HP: " + m.getHp());
     }
@@ -35,7 +42,6 @@ public class Rogue extends Character{
 	System.out.println("4 - Run away");
 	String input = Keyboard.readString();
 	if (input.equals("1")){
-	    System.out.println("Your majestic blade bathes in crimson as you dig the blade into your foe");
 	    attack(m);
 	}
 	else if (input.equals("2")){

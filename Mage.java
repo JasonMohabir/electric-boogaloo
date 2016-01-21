@@ -3,14 +3,14 @@ public class Mage extends Character{
     
     public Mage(String n){
 	name = n;
-	hp = 70;
-	spmp = 90;
-	tp = 35;
-	str = 4;
-	end = 5;
-	intl = 9;
-	spd = 7;
-	luck = 6;
+	hp = 30;
+	spmp = 70;
+	tp = 50;
+	str = 0;
+	end = 0;
+	intl = 0;
+	spd = 0;
+	luck = 0;
     }
 
     public void fullHeal(){

@@ -1,5 +1,4 @@
 import cs1.Keyboard;
-
 // HUMP HARDLANDS
 // Goals: Battle with a random monster, attack the monster, open your inventory, use a potion, use a power up, defeat the monster, gain experience points
 

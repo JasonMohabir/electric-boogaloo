@@ -42,7 +42,7 @@ public abstract class Character {
     public int getSpd(){
 	return spd;
     }
-    public int getLucc(){
+    public int getLuck(){
 	return luck;
     }
     public int getSpMp(){
