@@ -39,7 +39,7 @@ public class ZoneOne extends Zone {
 	if (input.equals("2")){
 	    System.out.println("You ruffle through your bag.");
 	    Inventory invent = new Inventory();
-	    invent.addItem("Crimson Dagger", 1);
+	    //invent.addItem("Crimson Dagger", 1);
 	    prompt();
 	}
 	if (input.equals("3")){
