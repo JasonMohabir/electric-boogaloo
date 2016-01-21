@@ -22,6 +22,10 @@ public abstract class Character {
 	hp = hp - dmg;
     }
 
+    public void lowerspmp(int cst){
+	spmp = spmp - cst;
+    }
+
     public void autoSkills(){
     }
 

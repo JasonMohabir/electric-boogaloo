@@ -43,8 +43,47 @@ public class Rogue extends Character{
     }
     
     public void DisplayHealth(Monster m){
-	System.out.println(name + "'s HP: " + hp + "\t\t\t\t\t\t\t Enemy's HP: " + m.getHp());
+	System.out.println(name + "'s HP: " + hp + "\t" + name + "'s Sp/Mp: " + spmp + "\t\t\t\t\t\t Enemy's HP: " + m.getHp());
     }
+	
+    public void DoubleStrike(Monster m){
+	double dmg;
+	this.lowerspmp(10);
+	dmg = (.3 + Math.random() * .7)*((str * .2) + (spd * .2) + (luck * .04));
+	System.out.println("Your first strike deals " + dmg + " Damage\n");
+	m.lowerHp((int)dmg);
+	dmg = (.3 + Math.random() * .7)*((str * .2) + (spd * .2) + (luck * .04));
+	System.out.println("Your second strike deals " + dmg + " Damage\n");
+	m.lowerHp((int)dmg);
+    }
+
+
+    public void SkillsDisplay(Monster m){
+	System.out.println("1 - Double Strike");
+	System.out.println("2 - Viper's Tongue");
+	System.out.println("3 - Sand Bomb");
+	String input = Keyboard.readString();
+	if (input.equals("1")){
+	    DoubleStrike(m);
+	}
+	else if (input.equals("2")){
+	    System.out.println("Under development. Please understand fam");
+	    //VipersTongue(m);
+	    //action(m);
+	    SkillsDisplay(m);
+	}
+	else if (input.equals("3")){
+	    System.out.println("Under development. Please understand fam");
+	    //SandBomb(m);
+	    //action(m);
+	    SkillsDisplay(m);
+	}
+	else{
+	    System.out.println("Invalid input");
+	    SkillsDisplay(m);
+	}
+    }
+
 	
     //List of Actions
     public void action(Monster m){
@@ -57,8 +96,7 @@ public class Rogue extends Character{
 	    attack(m);
 	}
 	else if (input.equals("2")){
-	    System.out.println("Under development. Please understand fam");
-	    action(m);
+	    SkillsDisplay(m);
 	}
 	else if (input.equals("3")){
 	    System.out.println("Under development. Please understand fam");
