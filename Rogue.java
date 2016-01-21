@@ -56,8 +56,20 @@ public class Rogue extends Character{
     public void enemyaction(Monster m){
 	m.attack(this);
     }
-	
-    //Starts battle
+
+    public void Afterbattle(Monster m){
+	if (!(isAlive() || m.isAlive())){
+	    System.out.println("Your foe perishes before you, but not before claiming your life for themselves. You are dead. At least you tried");
+	}
+	else if (!(isAlive())){
+	    System.out.println("Your strength fails you. You're dead.");
+	}
+	else if(!(m.isAlive())){
+	    System.out.println("You emerge victorious! Nice kill.");
+	}
+    }
+    
+    
     public void battle(Monster m){
 	System.out.println("The Battle Begins\n\n");
 	while (isAlive() && m.isAlive()){
@@ -65,8 +77,10 @@ public class Rogue extends Character{
 	    System.out.println("What do you do?");
 	    action(m);
 	    enemyaction(m);  
-	}	    
+	}
+	Afterbattle(m);
     };
+	
     public String toString(){
 	return name + " is a powerful Rogue with these stats:" + 
 	    "\nHp = " + hp +

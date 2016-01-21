@@ -14,9 +14,10 @@ public class Warrior extends Character{
     }
     
     public void attack(Monster m){
-	int dmg = 10;
+	double dmg;
+	dmg = (.7 + Math.random() * .3)*((str * .5) + (spd * .2) + (luck * .04));
 	System.out.println("Your towering strength produces " + dmg + " Damage\n");
-	m.lowerHp(dmg);
+	       m.lowerHp((int)dmg);
     }
 
     public void DisplayHealth(Monster m){
@@ -54,8 +55,20 @@ public class Warrior extends Character{
     public void enemyaction(Monster m){
 	m.attack(this);
     }
-	
-
+    
+        public void Afterbattle(Monster m){
+	if (!(isAlive() || m.isAlive())){
+	    System.out.println("Your foe perishes before you, but not before claiming your life for themselves. You are dead. At least you tried");
+	}
+	else if (!(isAlive())){
+	    System.out.println("Your strength fails you. You're dead.");
+	}
+	else if(!(m.isAlive())){
+	    System.out.println("You emerge victorious! Nice kill.");
+	}
+    }
+    
+    
     public void battle(Monster m){
 	System.out.println("The Battle Begins\n\n");
 	while (isAlive() && m.isAlive()){
@@ -63,7 +76,8 @@ public class Warrior extends Character{
 	    System.out.println("What do you do?");
 	    action(m);
 	    enemyaction(m);  
-	}	    
+	}
+	Afterbattle(m);
     };
     
     public String toString(){

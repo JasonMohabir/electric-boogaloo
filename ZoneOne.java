@@ -29,13 +29,12 @@ public class ZoneOne extends Zone {
 
 	if (input.equals("1")){
  	    System.out.println("The sand slips through the hooves the sand steed.");
-	    if (moves == 0){
+	    if (moves < 4){
 		attacked();
-		exit();
 	    }
-	    else{ System.out.println("The desert is barren, and lifeless. Something tells you to try something else.");}
-	    prompt();
+	    exit();
 	}
+	
 	if (input.equals("2")){
 	    System.out.println("You ruffle through your bag.");
 	    // inventoryDisplay();
@@ -55,18 +54,22 @@ public class ZoneOne extends Zone {
 	}
     }   
 
-    public void attacked(){
+    public void attacked(){	
 	System.out.println("What is that! A Sand Beatle appears!");
 	Monster en = new Sandbeetle(); 
 	System.out.println("You are going to need to fight.");
 	chara.battle(en);
 	moves++;
+	prompt();
+	
     }
 
     public void exit(){
 	System.out.println("You are weary from your first encounter with danger. The sun beats down on you. You close your eyes.");
 	System.out.println("You are ready to begin...");
 	System.out.println("SANDSTORY 3D!");
+	Town firstTown = new TownOne(chara);
+	firstTown.play();
     }
 }
 

@@ -3,9 +3,6 @@ public abstract class Monster {
     public int hp, str, end, intl, spd, luck;
 
     public void attack(Character m){
-	int dmg = 10;
-	System.out.println("The beast charges, hitting you with " + dmg + " Damage\n");
-	m.lowerHp(dmg);
     }
 
     public boolean isAlive(){

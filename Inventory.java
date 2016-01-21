@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 // for shops, people, rooms, etc.
 // keep amounts correct
 class Inventory extends ArrayList<InventoryItem> {

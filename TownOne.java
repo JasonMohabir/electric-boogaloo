@@ -1,5 +1,5 @@
 // BEGENEN: Health Center, Wealth Shop, [Training Area], Pub
-
+import cs1.Keyboard;
 
 public class TownOne extends Town {
     Character chara;
@@ -23,12 +23,7 @@ public class TownOne extends Town {
 	String input = Keyboard.readString();
 
 	if (input.equals("1")){
-	    System.out.println("The sand slips through the hooves the sand steed.");
-	    if (moves == 0){
-		attacked();
-		exit();
-	    }
-	    else{ System.out.println("The desert is barren, and lifeless. Something tells you to try something else.");}
+	    System.out.println("Under development");
 	    prompt();
 	}
 	if (input.equals("2")){
@@ -50,8 +45,8 @@ public class TownOne extends Town {
 	}
     }   
 
-    exit(){
-	return;
+   public void exit(){
+	
     }
 
 }
