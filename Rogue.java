@@ -12,6 +12,10 @@ public class Rogue extends Character{
 	spd = 9;
 	luck = 3;
     }
+
+    public void fullHeal(){
+	hp = 80;
+    }
     
     public void attack(Monster m){
 	int dmg = 10;

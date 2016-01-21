@@ -18,7 +18,7 @@ public class TownOne extends Town {
     
     public void prompt(){
 	
-	String prompt = "Choose your action:\n1 - Explore the town\n2 - Check your inventory\n3 - Go to the tavern\n4 - Go to the pub\n5 - Go to the zed zed";
+	String prompt = "Choose your action:\n1 - Explore the town\n2 - Check your inventory\n3 - Go to the tavern\n4 - Go to the pub\n5 - Go to the net zone";
 	System.out.println(prompt);
 	String input = Keyboard.readString();
 
@@ -27,17 +27,20 @@ public class TownOne extends Town {
 	    prompt();
 	}
 	if (input.equals("2")){
-	    System.out.println("You ruffle through your bag.");
+	    System.out.println("Under development");
 	    // inventoryDisplay();
 	    prompt();
 	}
 	if (input.equals("3")){
-	    System.out.println("The heavens spell out in Comic Sans font:\n \" Lol m8 you tried \"");
+	    System.out.println("Under development");
 	    prompt();
 	}
 	if (input.equals("4")){
-	    System.out.println("The camel is silent");
+	    System.out.println("Under development");
 	    prompt();
+	}
+	if (input.equals("5")){
+	    exit();
 	}
 	else {
 	    System.out.println("Try again");
@@ -46,7 +49,9 @@ public class TownOne extends Town {
     }   
 
    public void exit(){
-	
+       System.out.println("You move onto the next Zone, Zone Two");
+       Zone z2 = new ZoneTwo(chara);
+       z2.play();
     }
 
 }

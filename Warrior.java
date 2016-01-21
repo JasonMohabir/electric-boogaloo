@@ -13,6 +13,10 @@ public class Warrior extends Character{
 	luck = 5;
     }
     
+    public void fullHeal(){
+	hp = 100;
+    }
+
     public void attack(Monster m){
 	double dmg;
 	dmg = (.7 + Math.random() * .3)*((str * .5) + (spd * .2) + (luck * .04));

@@ -13,6 +13,10 @@ public class Mage extends Character{
 	luck = 6;
     }
 
+    public void fullHeal(){
+	hp = 70;
+    }
+
     public void attack(Monster m){
 	int dmg = 10;
 	System.out.println("Your wisdom and focus let's you strike your enemy sucessfully, producing " + dmg + " Damage\n");

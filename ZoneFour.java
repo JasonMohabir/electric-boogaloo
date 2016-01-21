@@ -23,18 +23,17 @@ public class ZoneFour extends Zone {
     
     public void prompt(){
 	
-	String prompt = "Choose your action:\n1 - Explore the desert\n2 - Check your inventory\n3 - Look up to the heavens\n4 - Talk to your sand steed.";
+	String prompt = "Choose your action:\n1 - Explore the desert\n2 - Check your inventory\n3 - Look up to the heavens\n4 - Talk to your sand steed0\n\nMoves made so far: " + moves + "\n";
 	System.out.println(prompt);
 	String input = Keyboard.readString();
-
 	if (input.equals("1")){
-	    System.out.println("The sand slips through the hooves the sand steed.");
-	    if (moves == 0){
+	    if (moves < 4){
 		attacked();
+		prompt();
+	    }
+	    else{
 		exit();
 	    }
-	    else{ System.out.println("The desert is barren, and lifeless. Something tells you to try something else.");}
-	    prompt();
 	}
 	if (input.equals("2")){
 	    System.out.println("You ruffle through your bag.");
@@ -67,6 +66,8 @@ public class ZoneFour extends Zone {
 	System.out.println("You are weary from your first encounter with danger. The sun beats down on you. You close your eyes.");
 	System.out.println("You are ready to begin...");
 	System.out.println("SANDSTORY 3D!");
+	Town fourthTown = new TownFour(chara);
+	fourthTown.play();
     }
 }
 

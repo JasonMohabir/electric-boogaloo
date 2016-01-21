@@ -3,6 +3,8 @@ public abstract class Character {
     protected int hp, str, tp, end, intl, spd, luck, spmp;
     protected String name;
 
+    public void fullHeal(){
+    }
  
     public boolean isAlive(){
 	return ( hp > 0 );
