@@ -70,6 +70,10 @@ public class sandstory{
 	    c.setTp(c.getTp() + 10);
 	    return skpts - 1;
 	}
+	else if (input.equals("9")){
+	    c.autoSkills();
+	    return -1;
+	}
 	else{
 	    System.out.println("Invalid input");
 	    return skpts;
@@ -82,7 +86,7 @@ public class sandstory{
 	while (skillpts > 0){
 	    System.out.println("Here are your character's current stats:\n" + c);
 	    System.out.println("Manually improve your stats");
-	    System.out.println("You have " + skillpts + " left");
+	    System.out.println("You have " + skillpts + " skillpoints left");
 	    System.out.println("1 - Str - Strength, determines how hard you hit.");
 	    System.out.println("2 - End - Endurance, how well you can handle hits");
 	    System.out.println("3 - Intl - Intelligence, how many skills you can use");
@@ -91,6 +95,7 @@ public class sandstory{
 	    System.out.println("6 - Hp - Health Power, how much life you have");
 	    System.out.println("7 - Sp/Mp - Mana or Stamina Power, needed for skills");
 	    System.out.println("8 - Tp - Thirst Power, how well you handle the desert sun");
+	    System.out.println("\nOr you can use automated Stat presets. Type '9' for automatic preset");
 	    String input = Keyboard.readString();
 	    skillpts = updateSkills(input, c, skillpts);
 	}
