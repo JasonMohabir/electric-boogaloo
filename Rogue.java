@@ -47,16 +47,55 @@ public class Rogue extends Character{
     }
 	
     public void DoubleStrike(Monster m){
-	double dmg;
-	this.lowerspmp(10);
-	dmg = (.3 + Math.random() * .7)*((str * .2) + (spd * .2) + (luck * .04));
-	System.out.println("Your first strike deals " + dmg + " Damage\n");
-	m.lowerHp((int)dmg);
-	dmg = (.3 + Math.random() * .7)*((str * .2) + (spd * .2) + (luck * .04));
-	System.out.println("Your second strike deals " + dmg + " Damage\n");
-	m.lowerHp((int)dmg);
+	if(spmp < 10){
+	    System.out.println("You don't have enough Sp/Mp and the skill fizzles!");
+	}
+	else{
+	    double dmg;
+	    this.lowerspmp(10);
+	    dmg = (.3 + Math.random() * .7)*((str * .4) + (spd * .2) + (luck * .04));
+	    System.out.println("Your first strike deals " + dmg + " Damage\n");
+	    m.lowerHp((int)dmg);
+	    dmg = (.3 + Math.random() * .7)*((str * .4) + (spd * .2) + (luck * .04));
+	    System.out.println("Your second strike deals " + dmg + " Damage\n");
+	    m.lowerHp((int)dmg);
+	}
     }
 
+    public void VipersTongue(Monster m){
+	if(spmp < 20){
+	    System.out.println("You don't have enough Sp/Mp and the skill fizzles!");
+	}
+	else{
+	    double dmg;
+	    this.lowerspmp(20);
+	    dmg = (.9 + Math.random() * 1.2)*((str * .3) + (spd * .2) + (luck * .04));
+	    m.lowerHp((int)dmg);
+	    System.out.println("Your Viper's Tongue does " + dmg + " Damage\n");
+	    if (Math.random() * 100 < 80){
+		m.statusChange("Poisoned");
+		System.out.println("Your Viper's Tongue poisons your foe!");
+	    }
+	}
+    }
+
+    public void SandBomb(Monster m){
+	if(spmp < 30){
+	    System.out.println("You don't have enough Sp/Mp and the skill fizzles!");
+	}
+	else{
+	    double dmg;
+	    this.lowerspmp(30);
+	    dmg = (1 + Math.random() * 1.2)*((str * .3) + (spd * .2) + (luck * .04));
+	    m.lowerHp((int)dmg);
+	    System.out.println("Your Sand Bomb does " + dmg + " Damage\n");
+	    if (Math.random() * 100 < 80){
+		m.statusChange("Stunned");
+		System.out.println("Your Sand Bomb stuns your foe!");
+	    }
+	}
+    }
+    
 
     public void SkillsDisplay(Monster m){
 	System.out.println("1 - Double Strike");
@@ -67,16 +106,10 @@ public class Rogue extends Character{
 	    DoubleStrike(m);
 	}
 	else if (input.equals("2")){
-	    System.out.println("Under development. Please understand fam");
-	    //VipersTongue(m);
-	    //action(m);
-	    SkillsDisplay(m);
+	    VipersTongue(m);
 	}
 	else if (input.equals("3")){
-	    System.out.println("Under development. Please understand fam");
-	    //SandBomb(m);
-	    //action(m);
-	    SkillsDisplay(m);
+	    SandBomb(m);
 	}
 	else{
 	    System.out.println("Invalid input");
@@ -114,7 +147,7 @@ public class Rogue extends Character{
     
     //Enemy attack
     public void enemyaction(Monster m){
-	m.attack(this);
+	m.action(this);
     }
 
     public void Afterbattle(Monster m){

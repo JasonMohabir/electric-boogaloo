@@ -42,5 +42,7 @@ SS = Sandstory
 -SA The towns and zone, right now, are all identical
 -SA added a skillpoints system
 
-~/--------------------------------------------[Wednesday 1/21/16]-----------------------------------------------------/~
+~/--------------------------------------------[Thursday 1/22/16]-----------------------------------------------------/~
 -SA made the skill presets
+-SA added 3 new skills to each class along with 6 new status ailments
+

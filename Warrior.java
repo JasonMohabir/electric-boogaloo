@@ -27,17 +27,92 @@ public class Warrior extends Character{
 	hp = 100;
     }
 
-    public void attack(Monster m){
-	double dmg;
-	dmg = (.7 + Math.random() * .3)*((str * .5) + (spd * .2) + (luck * .04));
-	System.out.println("Your towering strength produces " + dmg + " Damage\n");
-	       m.lowerHp((int)dmg);
-    }
 
+   public void attack(Monster m){
+	double dmg;
+	double hpinc;
+	dmg = (.8 + Math.random() * .2)*((str * .6) + (spd * .2) + (luck * .04));
+	System.out.println("Your towering strength deals " + dmg + " Damage\n");
+	m.lowerHp((int)dmg);
+	if (Math.random() * 10 <= 2){
+	    hpinc = -1 *(1 +  Math.random()) * 2;
+	    lowerHp((int)hpinc);
+	    hpinc = hpinc * -1;
+	    System.out.println("Your overbearing strength heals your wounds, restoring " + hpinc + "  Hp!");
+	}
+    }
     public void DisplayHealth(Monster m){
-	System.out.println(name + "'s HP: " + hp + "\t\t\t\t\t\t\t Enemy's HP: " + m.getHp());
+	System.out.println(name + "'s HP: " + hp + "\t" + name + "'s Sp/Mp: " + spmp + "\t\t\t\t\t\t\t Enemy's HP: " + m.getHp());
     }
 	
+
+  public void BluntBash(Monster m){
+	if(spmp < 25){
+	    System.out.println("You don't have enough Sp/Mp and the skill fizzles!"); 
+	}
+	else{
+	    double dmg;
+	    this.lowerspmp(25);
+	    dmg = (.9 + Math.random() * 1.2)*((str * .1) + (spd * .1) + (luck * .04));
+	    m.lowerHp((int)dmg);
+	    System.out.println("Your Blunt Bash does " + dmg + " Damage\n");
+	    if (Math.random() * 100 < 60){
+		m.statusChange("Stunned");
+		System.out.println("Your Blunt Bash stuns your foe!");
+	    }
+	}
+  }
+
+ public void PreciseStrike(Monster m){
+	if(spmp < 20){
+	    System.out.println("You don't have enough Sp/Mp and the skill fizzles!"); 	 
+	}
+	else{
+	    double dmg;
+	    this.lowerspmp(25);
+	    dmg = (.9 + Math.random() * 1.2)*((str * .5) + (spd * .1) + (luck * .04));
+	    m.lowerHp((int)dmg);
+	    System.out.println("Your Blunt Bash does " + dmg + " Damage\n");
+	    if (Math.random() * 100 < 80){
+		m.statusChange("Bleeding");
+		System.out.println("Your Precise strike causes your foe to bleed!");
+	    }
+	}
+  }
+
+ public void Charge(Monster m){
+	if(spmp < 15){
+	    System.out.println("You don't have enough Sp/Mp and the skill fizzles!"); 
+	}
+	else{
+	    double dmg;
+	    this.lowerspmp(15);
+	    dmg = (.9 + Math.random() * 1.2)*((str * .7) + (spd * .2) + (luck * .04));
+	    m.lowerHp((int)dmg);
+	    System.out.println("Your Charge does " + dmg + " Damage\n");
+	}
+  }
+
+  public void SkillsDisplay(Monster m){
+	System.out.println("1 - Charge");
+	System.out.println("2 - Blunt Bash");
+	System.out.println("3 - Precise Strike");
+	String input = Keyboard.readString();
+	if (input.equals("1")){
+	    Charge(m);
+	}
+	else if (input.equals("2")){
+	    BluntBash(m);
+	}
+	else if (input.equals("3")){
+	    PreciseStrike(m);
+	}
+	else{
+	    System.out.println("Invalid input");
+	    SkillsDisplay(m);
+	}
+    }
+
     public void action(Monster m){
 	System.out.println("1 - Basic Attack");
 	System.out.println("2 - Use a Skill");
@@ -49,8 +124,7 @@ public class Warrior extends Character{
 	    attack(m);
 	}
 	else if (input.equals("2")){
-	    System.out.println("Under development. Please understand fam");
-	    action(m);
+	    SkillsDisplay(m);
 	}
 	else if (input.equals("3")){
 	    System.out.println("Under development. Please understand fam");
@@ -67,7 +141,7 @@ public class Warrior extends Character{
     }
     
     public void enemyaction(Monster m){
-	m.attack(this);
+	m.action(this);
     }
     
         public void Afterbattle(Monster m){

@@ -23,21 +23,98 @@ public class Mage extends Character{
 	spd = 4;
 	luck = 5;
     }
-
+    
     public void fullHeal(){
 	hp = 70;
     }
-
-    public void attack(Monster m){
-	int dmg = 10;
-	System.out.println("Your wisdom and focus let's you strike your enemy sucessfully, producing " + dmg + " Damage\n");
-	m.lowerHp(dmg);
+   public void attack(Monster m){
+	double dmg;
+	double mpinc;
+	dmg = (.8 + Math.random() * .2)*((str * .4) + (spd * .2) + (luck * .04));
+	System.out.println("Your quick strikes deal " + dmg + " Damage\n");
+	m.lowerHp((int)dmg);
+	if (Math.random() * 13 <= intl){
+	    mpinc = -1 * Math.random() * 25;
+	    lowerspmp((int)mpinc);
+	    System.out.println("Your wisdom and focus generates more " + mpinc + "  Sp/Mp!");
+	}
     }
 
     public void DisplayHealth(Monster m){
-	System.out.println(name + "'s HP: " + hp + "\t\t\t\t\t\t\t Enemy's HP: " + m.getHp());
+	System.out.println(name + "'s HP: " + hp + "\t" + name + "'s Sp/Mp: " + spmp + "\t\t\t\t\t\t\t Enemy's HP: " + m.getHp());
     }
-	
+
+    public void Fireball(Monster m){
+	if(spmp < 30){
+	    System.out.println("You don't have enough Sp/Mp and the skill fizzles!");
+	}
+	else{
+	    double dmg;
+	    this.lowerspmp(30);
+	    dmg = (.9 + Math.random() * 1.2)*((intl * .5) + (str * .2) + (luck * .04));
+	    m.lowerHp((int)dmg);
+	    System.out.println("Your Fireball does " + dmg + " Damage\n");
+	    if (Math.random() * 100 < 80){
+		m.statusChange("Burned");
+		System.out.println("Your Fireball burns your foe!");
+	    }
+	}
+    }	
+
+  public void Icestrike(Monster m){
+	if(spmp < 60){
+	    System.out.println("You don't have enough Sp/Mp and the skill fizzles!");
+	}
+	else{
+	    double dmg;
+	    this.lowerspmp(30);
+	    dmg = (.9 + Math.random() * 1.2)*((intl * .5) + (str * .2) + (luck * .04));
+	    m.lowerHp((int)dmg);
+	    System.out.println("Your Icestrike does " + dmg + " Damage\n");
+	    if (Math.random() * 100 < 60){
+		m.statusChange("Frozen");
+		System.out.println("Your Icestrike freezes your foe!");
+	    }
+	}
+    }
+
+    public void BlindingLight(Monster m){
+	if(spmp < 40){
+	    System.out.println("You don't have enough Sp/Mp and the skill fizzles!");
+	}
+	else{
+	    double dmg;
+	    this.lowerspmp(30);
+	    dmg = 1;
+	    m.lowerHp((int)dmg);
+	    System.out.println("Your Icestrike does " + dmg + " Damage\n");
+	    if (Math.random() * 100 < 90){
+		m.statusChange("Stunned");
+		System.out.println("Your Blinding Light stuns your foe!");
+	    }
+	}
+    }
+
+    public void SkillsDisplay(Monster m){
+	System.out.println("1 - Fireball");
+	System.out.println("2 - Icestrike");
+	System.out.println("3 - Blinding  Light");
+	String input = Keyboard.readString();
+	if (input.equals("1")){
+	    Fireball(m);
+	}
+	else if (input.equals("2")){
+	    Icestrike(m);
+	}
+	else if (input.equals("3")){
+	    BlindingLight(m);
+	}
+	else{
+	    System.out.println("Invalid input");
+	    SkillsDisplay(m);
+	}
+    }
+    
     public void action(Monster m){
 	System.out.println("1 - Basic Attack");
 	System.out.println("2 - Use a Skill");
@@ -49,8 +126,7 @@ public class Mage extends Character{
 	    attack(m);
 	}
 	else if (input.equals("2")){
-	    System.out.println("Under development. Please understand fam");
-	    action(m);
+	    SkillsDisplay(m);
 	}
 	else if (input.equals("3")){
 	    System.out.println("Under development. Please understand fam");
@@ -67,7 +143,7 @@ public class Mage extends Character{
     }
     
     public void enemyaction(Monster m){
-	m.attack(this);
+	m.action(this);
     }
 	
     public void Afterbattle(Monster m){

@@ -1,5 +1,5 @@
-class Item {
-
+public class Item {
+/*
 
     //Inventory
     public boolean filled;
@@ -29,7 +29,7 @@ class Item {
 	    BufferedReader br = new BufferedReader(new InputStreamReader(in));
 	    */
 
-	    
+	    /*
 	    String line;
 	    int counter = 0;
 
@@ -82,6 +82,6 @@ class Item {
 	println("Def: " + def);
 	println("Str: " + str);
     }
+	    */
 }
 
-}

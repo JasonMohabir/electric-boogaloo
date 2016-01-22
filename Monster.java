@@ -1,8 +1,79 @@
 public abstract class Monster {
     
     public int hp, str, end, intl, spd, luck;
+    public boolean isFrozen, isStunned, isPoisoned, isBurned, isBleeding = false;
+    
+    
+
+
 
     public void attack(Character m){
+    }
+    
+    public void action(Character m){
+	double dmg;
+	if (isFrozen == true){
+	    System.out.println("The enemy is frozen and can't attack this turn");
+	    if (Math.random() * 100 < 90){
+		statusChange("UnFrozen");
+		System.out.println("The enemy breaks free from the ice");
+	    }
+	    else{
+		 System.out.println("The enemy fails to break through the ice");
+	    }
+	    return;
+	}
+	if (isStunned == true){
+	    System.out.println("The enemy is stunned and can't attack this turn");
+	    if (Math.random() * 100 < 90){
+		statusChange("UnStunned");
+		System.out.println("The enemy breaks free from the stun");
+	    }
+	    else{
+		 System.out.println("The enemy fails to overcome the stun");
+	    }
+	    return;
+	}
+	if (isBurned == true){
+	    dmg = Math.random() * 3;
+	    lowerHp((int)dmg);
+	    System.out.println("The enemy is burned and takes " + dmg + " Damage");
+	    if (Math.random() * 100 < 70){
+		statusChange("UnBurned");
+		System.out.println("The enemy estinguishes fire");
+	    }
+	    else{
+		 System.out.println("The enemy fails to stop the fire");
+	    }
+	    
+	}
+	if (isPoisoned == true){
+	    dmg = Math.random() * 3;
+	    lowerHp((int)dmg);
+	    System.out.println("The enemy is poisoned and takes " + dmg + " Damage");
+	    if (Math.random() * 100 < 70){
+		statusChange("UnPoisoned");
+		System.out.println("The enemy fights off the poison");
+	    }
+	    else{
+		 System.out.println("The enemy fails to fight off the poison");
+	    }
+	    
+	}
+	if (isBleeding == true){
+	    dmg = Math.random() * 3;
+	    lowerHp((int)dmg);
+	    System.out.println("The enemy is bleeding and takes " + dmg + " Damage");
+	    if (Math.random() * 100 < 70){
+		statusChange("UnBleeding");
+		System.out.println("The enemy stops the bleeding");
+	    }
+	    else{
+		 System.out.println("The enemy fails to stop the bleeding");
+	    }
+	   
+	}
+	attack(m);
     }
 
     public boolean isAlive(){
@@ -12,6 +83,39 @@ public abstract class Monster {
     public void lowerHp(int dmg){
 	hp = hp - dmg;
     }
+   
+    public void statusChange(String s){
+	if (s.equals("Frozen")){
+	    isFrozen = true;
+	}
+	if (s.equals("UnFrozen")){
+	    isFrozen = false;
+	}
+	if (s.equals("Stunned")){
+	    isStunned = true;
+	}
+	if (s.equals("UnStunned")){
+	    isStunned = false;
+	}
+	if (s.equals("Poisoned")){
+	    isPoisoned = true;
+	}
+	if (s.equals("UnPoisoned")){
+	    isPoisoned = false;
+	}
+	if (s.equals("Bleeding")){
+	    isBleeding = true;
+	}
+	if (s.equals("UnBleeding")){
+	    isBleeding = false;
+	}
+	if (s.equals("Burned")){
+	    isBurned = true;
+	}
+	if (s.equals("UnBurned")){
+	    isBurned = false;
+	}
+    }	  
     
     //Acessors
     public int getHp(){

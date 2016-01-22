@@ -1,5 +1,5 @@
 public class Inventory {
-
+    /*
     int useableSlots, slots = 50;
 
     Inventory(){
@@ -52,6 +52,6 @@ public class Inventory {
             }
         }
     }
-
+    */
  
 }
