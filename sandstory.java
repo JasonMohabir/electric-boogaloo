@@ -174,13 +174,27 @@ public class sandstory{
 	}
     }
 
+    public void confirm(){
+	System.out.println("\n\nReady to move on?\n1- Continue\n2- Restart");
+	String input = Keyboard.readString();
+	if (input.equals("1")){
+	    Zone z1 = new ZoneOne(chrtr);
+	    z1.play();
+	}
+	else if (input.equals("2")){
+	    play();
+	}
+	else{
+	    System.out.println("Invalid input");
+	}
+    }
+
     public   void play(){
 
 	System.out.println(" \n\n =+++++++++++++++++++++++++++++++++++++++++=\n\n Welcome to Sand Story 3D\n Note that this game is not in 3D\n\n Sand Story 3D: A tale of friendship, hardship , and sand.\n\n Type 'Start' to begin\n\n ");
 	start();
-        createchar();
-	Zone z1 = new ZoneOne(chrtr);
-	z1.play();
+        createchar();	
+	confirm();	
     }
     public static void main (String [] args){
 	sandstory newgame = new sandstory();

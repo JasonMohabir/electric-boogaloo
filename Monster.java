@@ -10,6 +10,16 @@ public abstract class Monster {
     public void attack(Character m){
     }
     
+    public void charaction(Character m){
+	if (!(m.dodgechance())){
+	    attack(m);
+	    }
+	else{
+	    System.out.println("The beast charges, but you quickly dodge\n");
+	}
+    }
+
+
     public void action(Character m){
 	double dmg;
 	if (isFrozen == true){
@@ -73,7 +83,7 @@ public abstract class Monster {
 	    }
 	   
 	}
-	attack(m);
+	charaction(m);
     }
 
     public boolean isAlive(){

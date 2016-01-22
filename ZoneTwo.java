@@ -23,7 +23,7 @@ public class ZoneTwo extends Zone {
 	System.out.println(prompt);
 	String input = Keyboard.readString();
 	if (input.equals("1")){
-	    if (moves < 4){
+	    if (moves < 1){
 		attacked();
 		prompt();
 	    }

@@ -24,11 +24,11 @@ public class ZoneOne extends Zone {
     }
     
     public void prompt(){
-	String prompt = "Choose your action:\n1 - Explore the desert\n2 - Check your inventory\n3 - Look up to the heavens\n4 - Talk to your sand steed0\n\nMoves made so far: " + moves + "\n";
+	String prompt = "Choose your action:\n1 - Explore the desert\n2 - Check your inventory\n3 - Look up to the heavens\n4 - Talk to your sand steed\n\nMoves made so far: " + moves + "\n";
 	System.out.println(prompt);
 	String input = Keyboard.readString();
 	if (input.equals("1")){
-	    if (moves < 4){
+	    if (moves < 1){
 		attacked();
 		prompt();
 	    }

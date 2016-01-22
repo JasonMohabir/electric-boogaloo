@@ -69,7 +69,7 @@ public class Warrior extends Character{
 	}
 	else{
 	    double dmg;
-	    this.lowerspmp(25);
+	    this.lowerspmp(20);
 	    dmg = (.9 + Math.random() * 1.2)*((str * .5) + (spd * .1) + (luck * .04));
 	    m.lowerHp((int)dmg);
 	    System.out.println("Your Blunt Bash does " + dmg + " Damage\n");

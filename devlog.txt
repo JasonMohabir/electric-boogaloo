@@ -46,3 +46,6 @@ SS = Sandstory
 -SA made the skill presets
 -SA added 3 new skills to each class along with 6 new status ailments
 
+~/--------------------------------------------[Thursday 1/23/16]-----------------------------------------------------/~
+
+-SA added dodging to the character

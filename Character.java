@@ -7,6 +7,10 @@ public abstract class Character {
 
     public void fullHeal(){
     }
+    
+    public boolean dodgechance(){
+	return (Math.random() * 100 < (spd + 5) );
+	    }
  
     public boolean isAlive(){
 	return ( hp > 0 );
