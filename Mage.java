@@ -30,13 +30,14 @@ public class Mage extends Character{
    public void attack(Monster m){
 	double dmg;
 	double mpinc;
-	dmg = (.8 + Math.random() * .2)*((str * .4) + (spd * .2) + (luck * .04));
-	System.out.println("Your quick strikes deal " + dmg + " Damage\n");
+	dmg = (.8 + Math.random() * .2)*((str * .4) + (spd * .2) + (luck * .04)) - enemydef(m);
+	System.out.println("Your quick strikes deal " + (int)dmg + " Damage\n");
 	m.lowerHp((int)dmg);
 	if (Math.random() * 13 <= intl){
 	    mpinc = -1 * Math.random() * 25;
 	    lowerspmp((int)mpinc);
-	    System.out.println("Your wisdom and focus generates more " + mpinc + "  Sp/Mp!");
+	    mpinc = -1 * mpinc;
+	    System.out.println("Your wisdom and focus generates " + (int)mpinc + "more  Sp/Mp!");
 	}
     }
 
@@ -51,9 +52,9 @@ public class Mage extends Character{
 	else{
 	    double dmg;
 	    this.lowerspmp(30);
-	    dmg = (.9 + Math.random() * 1.2)*((intl * .5) + (str * .2) + (luck * .04));
+	    dmg = (.9 + Math.random() * 1.2)*((intl * .5) + (str * .2) + (luck * .04)) - enemydef(m);
 	    m.lowerHp((int)dmg);
-	    System.out.println("Your Fireball does " + dmg + " Damage\n");
+	    System.out.println("Your Fireball does " + (int)dmg + " Damage\n");
 	    if (Math.random() * 100 < 80){
 		m.statusChange("Burned");
 		System.out.println("Your Fireball burns your foe!");
@@ -68,9 +69,9 @@ public class Mage extends Character{
 	else{
 	    double dmg;
 	    this.lowerspmp(60);
-	    dmg = (.9 + Math.random() * 1.2)*((intl * .5) + (str * .2) + (luck * .04));
+	    dmg = (.9 + Math.random() * 1.2)*((intl * .5) + (str * .2) + (luck * .04)) - enemydef(m);
 	    m.lowerHp((int)dmg);
-	    System.out.println("Your Icestrike does " + dmg + " Damage\n");
+	    System.out.println("Your Icestrike does " + (int)dmg + " Damage\n");
 	    if (Math.random() * 100 < 60){
 		m.statusChange("Frozen");
 		System.out.println("Your Icestrike freezes your foe!");
@@ -87,7 +88,7 @@ public class Mage extends Character{
 	    this.lowerspmp(30);
 	    dmg = 1;
 	    m.lowerHp((int)dmg);
-	    System.out.println("Your Icestrike does " + dmg + " Damage\n");
+	    System.out.println("Your Icestrike does " + (int)dmg + " Damage\n");
 	    if (Math.random() * 100 < 90){
 		m.statusChange("Stunned");
 		System.out.println("Your Blinding Light stuns your foe!");

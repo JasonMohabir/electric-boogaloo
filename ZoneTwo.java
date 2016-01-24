@@ -17,39 +17,44 @@ public class ZoneTwo extends Zone {
     public void play(){
 	prompt();
     }
-    
+
     public void prompt(){
-	String prompt = "Choose your action:\n1 - Explore the desert\n2 - Check your inventory\n3 - Look up to the heavens\n4 - Talk to your sand steed0\n\nMoves made so far: " + moves + "\n";
-	System.out.println(prompt);
-	String input = Keyboard.readString();
-	if (input.equals("1")){
-	    if (moves < 1){
-		attacked();
+	if (chara.isAlive()){
+	    String prompt = "Choose your action:\n1 - Explore the desert\n2 - Check your inventory\n3 - Look up to the heavens\n4 - Talk to your sand steed\n\nMoves made so far: " + moves + "\n";
+	    System.out.println(prompt);
+	    String input = Keyboard.readString();
+	    if (input.equals("1")){
+		if (moves < length){
+		    attacked();
+		prompt();
+		}
+		else{
+		    exit();
+		}
+	    }	
+	    else if (input.equals("2")){
+		System.out.println("You ruffle through your bag.");
+		Inventory invent = new Inventory();
 		prompt();
 	    }
-	    else{
-		exit();
+	    else if (input.equals("3")){
+		System.out.println("The heavens spell out in Comic Sans font:\n \" Lol m8 you tried \"");
+		prompt();
 	    }
-	}
-
-	else if (input.equals("2")){
-	    System.out.println("You ruffle through your bag.");
-	    // inventoryDisplay();
-	    prompt();
-	}
-	else if (input.equals("3")){
-	    System.out.println("The heavens spell out in Comic Sans font:\n \" Lol m8 you tried \"");
-	    prompt();
-	}
-	else if (input.equals("4")){
-	    System.out.println("The camel is silent");
-	    prompt();
-	}
+	    else if (input.equals("4")){
+		System.out.println("The camel is silent");
+		prompt();
+	    }
 	else {
 	    System.out.println("Try again");
 	    prompt();
 	}
-    }   
+	}
+	else{
+	    died();
+	}
+    }
+   
 
     public void attacked(){
 	System.out.println("What is that! A Sand Beatle appears!");

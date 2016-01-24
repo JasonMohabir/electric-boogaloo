@@ -8,7 +8,11 @@ public abstract class Character {
 
     public void fullHeal(){
     }
-    
+
+    public double enemydef(Monster m){
+	return ((.5 + Math.random() * .5) * m.getEnd() * .3);
+    }    
+
     public void setDiff(int d){
 	diff = d;
     }

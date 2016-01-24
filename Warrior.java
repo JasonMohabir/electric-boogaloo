@@ -12,7 +12,7 @@ public class Warrior extends Character{
 	spd = 0;
 	luck = 0;
     }
- public void autoSkills(){
+    public void autoSkills(){
 	hp = 100;
 	spmp = 50;
 	tp = 50;
@@ -27,18 +27,20 @@ public class Warrior extends Character{
 	hp = 100;
     }
 
+ 
 
-   public void attack(Monster m){
+    
+    public void attack(Monster m){
 	double dmg;
 	double hpinc;
-	dmg = (.8 + Math.random() * .2)*((str * .6) + (spd * .2) + (luck * .04));
-	System.out.println("Your towering strength deals " + dmg + " Damage\n");
+	dmg = (.8 + Math.random() * .2)*((str * .6) + (spd * .2) + (luck * .04)) - enemydef(m);
+	System.out.println("Your towering strength deals " + (int)dmg + " Damage\n");
 	m.lowerHp((int)dmg);
 	if (Math.random() * 10 <= 2){
 	    hpinc = -1 *(1 +  Math.random()) * 2;
 	    lowerHp((int)hpinc);
 	    hpinc = hpinc * -1;
-	    System.out.println("Your overbearing strength heals your wounds, restoring " + hpinc + "  Hp!");
+	    System.out.println("Your overbearing strength heals your wounds, restoring " + (int)hpinc + "  Hp!");
 	}
     }
     public void DisplayHealth(Monster m){
@@ -53,9 +55,9 @@ public class Warrior extends Character{
 	else{
 	    double dmg;
 	    this.lowerspmp(25);
-	    dmg = (.9 + Math.random() * 1.2)*((str * .1) + (spd * .1) + (luck * .04));
+	    dmg = (.9 + Math.random() * 1.2)*((str * .1) + (spd * .1) + (luck * .04)) - enemydef(m);
 	    m.lowerHp((int)dmg);
-	    System.out.println("Your Blunt Bash does " + dmg + " Damage\n");
+	    System.out.println("Your Blunt Bash does " + (int)dmg + " Damage\n");
 	    if (Math.random() * 100 < 60){
 		m.statusChange("Stunned");
 		System.out.println("Your Blunt Bash stuns your foe!");
@@ -70,9 +72,9 @@ public class Warrior extends Character{
 	else{
 	    double dmg;
 	    this.lowerspmp(20);
-	    dmg = (.9 + Math.random() * 1.2)*((str * .5) + (spd * .1) + (luck * .04));
+	    dmg = (.9 + Math.random() * 1.2)*((str * .5) + (spd * .1) + (luck * .04)) - enemydef(m);
 	    m.lowerHp((int)dmg);
-	    System.out.println("Your Blunt Bash does " + dmg + " Damage\n");
+	    System.out.println("Your Blunt Bash does " + (int)dmg + " Damage\n");
 	    if (Math.random() * 100 < 80){
 		m.statusChange("Bleeding");
 		System.out.println("Your Precise strike causes your foe to bleed!");
@@ -87,9 +89,9 @@ public class Warrior extends Character{
 	else{
 	    double dmg;
 	    this.lowerspmp(15);
-	    dmg = (.9 + Math.random() * 1.2)*((str * .7) + (spd * .2) + (luck * .04));
+	    dmg = (.9 + Math.random() * 1.2)*((str * .7) + (spd * .2) + (luck * .04)) - enemydef(m);
 	    m.lowerHp((int)dmg);
-	    System.out.println("Your Charge does " + dmg + " Damage\n");
+	    System.out.println("Your Charge does " + (int)dmg + " Damage\n");
 	}
   }
 

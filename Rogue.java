@@ -31,13 +31,13 @@ public class Rogue extends Character{
     
    public void attack(Monster m){
 	double dmg;
-	dmg = (.8 + Math.random() * .2)*((str * .2) + (spd * .2) + (luck * .04));
-	System.out.println("Your quick strikes deal " + dmg + " Damage\n");
+	dmg = (.8 + Math.random() * .2)*((str * .2) + (spd * .2) + (luck * .04)) - enemydef(m);
+	System.out.println("Your quick strikes deal " + (int)dmg + " Damage\n");
 	m.lowerHp((int)dmg);
 	if (Math.random() * 100 <= spd){
 	    System.out.println("Your nimble manuvers and skills let you land a second blow!");
-	    dmg = (.4 + Math.random() * .3)*((str * .4) + (spd * .3) + (luck * .04));
-	    System.out.println("Your second hit deals " + dmg + " Damage\n");
+	    dmg = (.4 + Math.random() * .3)*((str * .4) + (spd * .3) + (luck * .04)) - enemydef(m);
+	    System.out.println("Your second hit deals " + (int)dmg + " Damage\n");
 	    m.lowerHp((int)dmg);
 	}
     }
@@ -53,11 +53,11 @@ public class Rogue extends Character{
 	else{
 	    double dmg;
 	    this.lowerspmp(10);
-	    dmg = (.3 + Math.random() * .7)*((str * .4) + (spd * .2) + (luck * .04));
-	    System.out.println("Your first strike deals " + dmg + " Damage\n");
+	    dmg = (.3 + Math.random() * .7)*((str * .4) + (spd * .2) + (luck * .04)) - enemydef(m);
+	    System.out.println("Your first strike deals " + (int)dmg + " Damage\n");
 	    m.lowerHp((int)dmg);
-	    dmg = (.3 + Math.random() * .7)*((str * .4) + (spd * .2) + (luck * .04));
-	    System.out.println("Your second strike deals " + dmg + " Damage\n");
+	    dmg = (.3 + Math.random() * .7)*((str * .4) + (spd * .2) + (luck * .04)) - enemydef(m);
+	    System.out.println("Your second strike deals " + (int)dmg + " Damage\n");
 	    m.lowerHp((int)dmg);
 	}
     }
@@ -69,9 +69,9 @@ public class Rogue extends Character{
 	else{
 	    double dmg;
 	    this.lowerspmp(20);
-	    dmg = (.9 + Math.random() * 1.2)*((str * .3) + (spd * .2) + (luck * .04));
+	    dmg = (.9 + Math.random() * 1.2)*((str * .3) + (spd * .2) + (luck * .04)) - enemydef(m);
 	    m.lowerHp((int)dmg);
-	    System.out.println("Your Viper's Tongue does " + dmg + " Damage\n");
+	    System.out.println("Your Viper's Tongue does " + (int)dmg + " Damage\n");
 	    if (Math.random() * 100 < 80){
 		m.statusChange("Poisoned");
 		System.out.println("Your Viper's Tongue poisons your foe!");
@@ -86,9 +86,9 @@ public class Rogue extends Character{
 	else{
 	    double dmg;
 	    this.lowerspmp(30);
-	    dmg = (1 + Math.random() * 1.2)*((str * .3) + (spd * .2) + (luck * .04));
+	    dmg = (1 + Math.random() * 1.2)*((str * .3) + (spd * .2) + (luck * .04)) - enemydef(m);
 	    m.lowerHp((int)dmg);
-	    System.out.println("Your Sand Bomb does " + dmg + " Damage\n");
+	    System.out.println("Your Sand Bomb does " + (int)dmg + " Damage\n");
 	    if (Math.random() * 100 < 80){
 		m.statusChange("Stunned");
 		System.out.println("Your Sand Bomb stuns your foe!");

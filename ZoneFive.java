@@ -18,6 +18,8 @@ public class ZoneFive extends Zone {
 	prompt();
     }
     
+
+
     public void prompt(){
 	
 	String prompt = "Choose your action:\n1 - Explore the desert\n2 - Check your inventory\n3 - Look up to the heavens\n4 - Talk to your sand steed.\n\nMoves made so far: " + moves + "\n";

@@ -5,7 +5,9 @@ public abstract class Monster {
     
     
 
-
+    public double enemydef(Character m){
+	return ((.5 + Math.random() * .5) * m.getEnd() * .3);
+    }
 
     public void attack(Character m){
     }
