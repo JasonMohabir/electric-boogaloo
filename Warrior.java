@@ -37,14 +37,13 @@ public class Warrior extends Character{
 	System.out.println("Your towering strength deals " + (int)dmg + " Damage\n");
 	m.lowerHp((int)dmg);
 	if (Math.random() * 10 <= 2){
-	    hpinc = -1 *(1 +  Math.random()) * 2;
-	    lowerHp((int)hpinc);
-	    hpinc = hpinc * -1;
-	    System.out.println("Your overbearing strength heals your wounds, restoring " + (int)hpinc + "  Hp!");
+	    hpinc = (1 +  Math.random()) * 2;
+	    System.out.println("Your overbearing strength heals your wounds");
+	    incHp((int)hpinc);
 	}
     }
     public void DisplayHealth(Monster m){
-	System.out.println(name + "'s HP: " + hp + "\t" + name + "'s Sp/Mp: " + spmp + "\t\t\t\t\t\t\t Enemy's HP: " + m.getHp());
+	System.out.println(name + "'s HP: " + hp + "\t" + name + "'s Sp/Mp: " + spmp + "\t\t\t Enemy's HP: " + m.getHp());
     }
 	
 
@@ -74,7 +73,7 @@ public class Warrior extends Character{
 	    this.lowerspmp(20);
 	    dmg = (.9 + Math.random() * 1.2)*((str * .5) + (spd * .1) + (luck * .04)) - enemydef(m);
 	    m.lowerHp((int)dmg);
-	    System.out.println("Your Blunt Bash does " + (int)dmg + " Damage\n");
+	    System.out.println("Your Precise Strike does " + (int)dmg + " Damage\n");
 	    if (Math.random() * 100 < 80){
 		m.statusChange("Bleeding");
 		System.out.println("Your Precise strike causes your foe to bleed!");
@@ -96,9 +95,10 @@ public class Warrior extends Character{
   }
 
   public void SkillsDisplay(Monster m){
-	System.out.println("1 - Charge");
-	System.out.println("2 - Blunt Bash");
-	System.out.println("3 - Precise Strike");
+	System.out.println("1 - Charge: Costs 15 SpMp, This is a powerful charge and hit against your enemy!");
+	System.out.println("2 - Blunt Bash: Costs 25 SpMp, This ability has a chance to stun your enemy!");
+	System.out.println("3 - Precise Strike: Costs 20 SpMp, This ability has a chance to make your opponent bleed!");
+	System.out.println("4 - Go Back");
 	String input = Keyboard.readString();
 	if (input.equals("1")){
 	    Charge(m);
@@ -108,6 +108,9 @@ public class Warrior extends Character{
 	}
 	else if (input.equals("3")){
 	    PreciseStrike(m);
+	}
+	else if (input.equals("4")){
+	    action(m);
 	}
 	else{
 	    System.out.println("Invalid input");

@@ -9,6 +9,7 @@ public class ZoneThree extends Zone {
 
     public ZoneThree(Character ch){
 	chara = ch;
+	length = ch.getDiff() * 3;
     }
 
     // make automated ZoneOne
@@ -16,16 +17,18 @@ public class ZoneThree extends Zone {
     public void play(){
 	prompt();
     }
-    
+
+
     public void prompt(){
 	if (chara.isAlive()){
-	    String prompt = "Choose your action:\n1 - Explore the desert\n2 - Check your inventory\n3 - Look up to the heavens\n4 - Talk to your sand steed\n\nMoves made so far: " + moves + "\n";
+	    String prompt = "Choose your action:\n1 - Explore the desert\n2 - Check your inventory\n3 - Look up to the heavens\n4 - Talk to your sand steed\n\nMoves made so far: " + moves + "\n\nTp Left: " + chara.getTp() + "!\nEach move costs 5 Tp, remember that! Hit 0 and you will die!";
 	    System.out.println(prompt);
 	    String input = Keyboard.readString();
 	    if (input.equals("1")){
 		if (moves < length){
-		    attacked();
-		prompt();
+		    chara.lowertp(5);
+		    encounter();
+		    prompt();
 		}
 		else{
 		    exit();
@@ -44,21 +47,55 @@ public class ZoneThree extends Zone {
 		System.out.println("The camel is silent");
 		prompt();
 	    }
-	else {
-	    System.out.println("Try again");
-	    prompt();
-	}
+	    else {
+		System.out.println("Try again");
+		prompt();
+	    }
 	}
 	else{
 	    died();
 	}
     }
-   
 
+    public void encounter(){
+	double rng = Math.random() * 100;
+	if (rng < 10){
+	    SuperOasis supoas = new SuperOasis(chara);
+	    supoas.play();
+	    moves++;
+	}
+	else if (rng < 40){
+	    Oasis oas = new Oasis(chara);
+	    oas.play();
+	    moves++;
+	}
+	else{
+	    attacked();
+	}
+    }
+
+   public Monster chooseMons(){
+	double rng = Math.random() * 100;
+	if (rng < 10){
+	    return new M_SandDemon();
+	}
+	else if (rng < 30){
+	    return new M_GustKing();
+	}
+	else if (rng < 50){
+	    return new M_Sandsnake();
+	}
+	else if (rng < 70){
+	    return new M_Locus();
+	}
+	else {
+	    return new M_Sandbeetle();
+	}
+    }
 
     public void attacked(){
-	System.out.println("What is that! A Sand Beatle appears!");
-	Monster en = new M_Sandbeetle(); 
+	Monster en = chooseMons();
+	System.out.println("What is that! A" + en + "appears!");
 	System.out.println("You are going to need to fight.");
 	chara.battle(en);
 	moves++;

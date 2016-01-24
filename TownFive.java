@@ -14,7 +14,7 @@ public class TownFive extends Town {
     }
     public void prompt(){
 	
-	String prompt = "Choose your action:\n1 - Explore the town\n2 - Check your inventory\n3 - Go to the tavern\n4 - Go to the pub\n5 - Go to the net zone";
+	String prompt = "Choose your action:\n1 - Explore the town\n2 - Check your inventory\n3 - Go to the tavern\n4 - Go to the pub\n5 - Go to the next zone";
 	System.out.println(prompt);
 	String input = Keyboard.readString();
 

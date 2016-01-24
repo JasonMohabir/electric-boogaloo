@@ -8,5 +8,7 @@ public abstract class Zone {
 	System.out.println("The game is over!");
     }
 
+    public abstract void attacked();
+    
     public abstract void play();
 }

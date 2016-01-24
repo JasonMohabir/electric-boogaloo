@@ -84,9 +84,9 @@ public class sandstory{
     public void setStats(Character c){
 	int skillpts = 25;
 	while (skillpts > 0){
-	    System.out.println("Here are your character's current stats:\n" + c);
-	    System.out.println("Manually improve your stats");
-	    System.out.println("You have " + skillpts + " skillpoints left");
+	    System.out.println("\nHere are your character's current stats:\n\n" + c + "\n");
+	    System.out.println("\nYou can now manually improve your stats. Type the specified number to increase th stat by 1 point\n");
+	    System.out.println("\nYou have " + skillpts + " skillpoints left\n");
 	    System.out.println("1 - Str - Strength, determines how hard you hit.");
 	    System.out.println("2 - End - Endurance, how well you can handle hits");
 	    System.out.println("3 - Intl - Intelligence, how many skills you can use");
@@ -95,19 +95,19 @@ public class sandstory{
 	    System.out.println("6 - Hp - Health Power, how much life you have");
 	    System.out.println("7 - Sp/Mp - Mana or Stamina Power, needed for skills");
 	    System.out.println("8 - Tp - Thirst Power, how well you handle the desert sun");
-	    System.out.println("\nOr you can use automated Stat presets. Type '9' for automatic preset");
+	    System.out.println("\nOr you can use automated Stat presets. Type '9' for automatic preset\n");
 	    String input = Keyboard.readString();
 	    skillpts = updateSkills(input, c, skillpts);
 	}
-	System.out.println("Here are your character's final stats:\n" + c);
+	System.out.println("\nHere are your character's final stats:\n" + c + "\n");
     }
 
 	
     public  int chooseclass(){
-	System.out.println("Choose a class for you character:");
+	System.out.println("\nChoose a class for you character:");
 	System.out.println("1 - Warrior");
 	System.out.println("2 - Mage");
-	System.out.println("3 - Rouge");
+	System.out.println("3 - Rouge\n");
 	String input = Keyboard.readString();
 	if (input.equals("1")){
 	    return 1;
@@ -119,13 +119,13 @@ public class sandstory{
 	    return 3;
 	}
 	else{
-	    System.out.println("invalid input\n\n");
+	    System.out.println("\nInvalid input\n");
 	    return chooseclass();
 	}
     }
 
     public  void createchar(){
-	System.out.println("Choose a name for you character:");
+	System.out.println("\nChoose a name for you character:\n");
 	String name = Keyboard.readString();
         int classnum = chooseclass();
 	if (classnum == 1){
@@ -143,7 +143,7 @@ public class sandstory{
 
 
     public  void choosedif(){
-	System.out.println("\nSelect difficulty\nThe difficulty determines the length of the game and the number of  battles you engage in. Higher difficulties mean more enounters, making the game harder to beat, but also more fun to play\n\n 1 - Easy - For beginners playing for the first time\n 2 - Medium - For a moderate challenge\n 3 - Hard - Possibly frustratibly difficult\n 4 - Humpless Camel - We haven't even beaten this difficulty!");
+	System.out.println("\nSelect difficulty\nThe difficulty determines the length of the game and the number of  battles you engage in. Higher difficulties mean more enounters, making the game harder to beat, but also more fun to play\n\n 1 - Easy - For beginners playing for the first time\n 2 - Medium - For a moderate challenge\n 3 - Hard - Possibly frustratibly difficult\n 4 - Humpless Camel - We haven't even beaten this difficulty!\n");
 	String input = Keyboard.readString();
 	if (input.equals("1")){
 	    difficulty = 1;
@@ -169,7 +169,7 @@ public class sandstory{
 	    choosedif();
 	}
 	else{
-	    System.out.println("Try again");
+	    System.out.println("\nTry again\n");
 	    start();
 	}
     }
@@ -185,7 +185,7 @@ public class sandstory{
 	    play();
 	}
 	else{
-	    System.out.println("Invalid input");
+	    System.out.println("\nInvalid input\n");
 	}
     }
 
@@ -194,6 +194,7 @@ public class sandstory{
 	System.out.println(" \n\n =+++++++++++++++++++++++++++++++++++++++++=\n\n Welcome to Sand Story 3D\n Note that this game is not in 3D\n\n Sand Story 3D: A tale of friendship, hardship , and sand.\n\n Type 'Start' to begin\n\n ");
 	start();
         createchar();	
+	chrtr.setmaxes();
 	confirm();	
     }
     public static void main (String [] args){

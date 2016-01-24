@@ -98,9 +98,10 @@ public class Rogue extends Character{
     
 
     public void SkillsDisplay(Monster m){
-	System.out.println("1 - Double Strike");
-	System.out.println("2 - Viper's Tongue");
-	System.out.println("3 - Sand Bomb");
+	System.out.println("1 - Double Strike: Costs 10 MpSp, This ability is a powerful double strike!");
+	System.out.println("2 - Viper's Tongue: Costs 20 MpSp, This ability has a chance to poison your enemy!");
+	System.out.println("3 - Sand Bomb: Costs 30 MpSp, This ability has a chance to stun your opponent!");
+	System.out.println("4 - Go Back");
 	String input = Keyboard.readString();
 	if (input.equals("1")){
 	    DoubleStrike(m);
@@ -110,6 +111,9 @@ public class Rogue extends Character{
 	}
 	else if (input.equals("3")){
 	    SandBomb(m);
+	}
+	else if (input.equals("4")){
+	    action(m);
 	}
 	else{
 	    System.out.println("Invalid input");
@@ -136,7 +140,7 @@ public class Rogue extends Character{
 	    action(m);
 	}
 	else if (input.equals("4")){
-	    System.out.println("Under development. Please understand fam");
+	    System.out.println("THERE IS NO ESCAPE!!!");
 	    action(m);
 	}
 	else{

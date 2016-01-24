@@ -52,3 +52,7 @@ SS = Sandstory
 ~/--------------------------------------------[Saturday 1/23/16]-----------------------------------------------------/~
 -SA added the endings
 -SA fixed the game flow so it ended after the endings!
+
+~/--------------------------------------------[Sunday 1/24/16]-----------------------------------------------------/~
+-SA added the new Oasis and SuperOasis encounter system
+-SA added new enemies and randomized battle settings

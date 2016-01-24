@@ -30,14 +30,13 @@ public class Mage extends Character{
    public void attack(Monster m){
 	double dmg;
 	double mpinc;
-	dmg = (.8 + Math.random() * .2)*((str * .4) + (spd * .2) + (luck * .04)) - enemydef(m);
-	System.out.println("Your quick strikes deal " + (int)dmg + " Damage\n");
+	dmg = 1 + (.8 + Math.random() * .2)*((str * .4) + (spd * .2) + (luck * .04)) - enemydef(m);
+	System.out.println("Your mystical beams deal " + (int)dmg + " Damage\n");
 	m.lowerHp((int)dmg);
 	if (Math.random() * 13 <= intl){
-	    mpinc = -1 * Math.random() * 25;
-	    lowerspmp((int)mpinc);
-	    mpinc = -1 * mpinc;
-	    System.out.println("Your wisdom and focus generates " + (int)mpinc + "more  Sp/Mp!");
+	    System.out.println("Your immense wisdom and focus allows you to heal some SpMp!");
+	    mpinc = Math.random() * 25;
+	    incspmp((int)mpinc);
 	}
     }
 
@@ -52,7 +51,7 @@ public class Mage extends Character{
 	else{
 	    double dmg;
 	    this.lowerspmp(30);
-	    dmg = (.9 + Math.random() * 1.2)*((intl * .5) + (str * .2) + (luck * .04)) - enemydef(m);
+	    dmg = 1 + (.9 + Math.random() * 1.2)*((intl * .5) + (str * .2) + (luck * .04)) - enemydef(m);
 	    m.lowerHp((int)dmg);
 	    System.out.println("Your Fireball does " + (int)dmg + " Damage\n");
 	    if (Math.random() * 100 < 80){
@@ -69,7 +68,7 @@ public class Mage extends Character{
 	else{
 	    double dmg;
 	    this.lowerspmp(60);
-	    dmg = (.9 + Math.random() * 1.2)*((intl * .5) + (str * .2) + (luck * .04)) - enemydef(m);
+	    dmg = 1 + (.9 + Math.random() * 1.2)*((intl * .5) + (str * .2) + (luck * .04)) - enemydef(m);
 	    m.lowerHp((int)dmg);
 	    System.out.println("Your Icestrike does " + (int)dmg + " Damage\n");
 	    if (Math.random() * 100 < 60){
@@ -97,9 +96,10 @@ public class Mage extends Character{
     }
 
     public void SkillsDisplay(Monster m){
-	System.out.println("1 - Fireball");
-	System.out.println("2 - Icestrike");
-	System.out.println("3 - Blinding  Light");
+	System.out.println("1 - Fireball: Costs 30 SpMp, This ability has a chance to set your enemy of  fire!");
+	System.out.println("2 - Icestrike: Costs 60 SpMp, This ability has a chacne to freeze your enemy! ");
+	System.out.println("3 - Blinding  Light: Costs 40 SpMp, This ability has a chacne to stun your enemy!");
+	System.out.println("4 - Go Back");
 	String input = Keyboard.readString();
 	if (input.equals("1")){
 	    Fireball(m);
@@ -109,6 +109,9 @@ public class Mage extends Character{
 	}
 	else if (input.equals("3")){
 	    BlindingLight(m);
+	}
+	else if (input.equals("4")){
+	    action(m);
 	}
 	else{
 	    System.out.println("Invalid input");
@@ -123,7 +126,7 @@ public class Mage extends Character{
 	System.out.println("4 - Run away");
 	String input = Keyboard.readString();
 	if (input.equals("1")){
-	    System.out.println("Your majestic blade bathes in crimson as you dig the blade into your foe");
+	    System.out.println("Your magical strike hits the foe head on");
 	    attack(m);
 	}
 	else if (input.equals("2")){

@@ -1,8 +1,8 @@
 import cs1.Keyboard;
 
 
-// DREAM DESERT tutorial
-// Goals: Battle with a random monster, attack the monster, open your inventory, use a potion, use a power up, defeat the monster, gain experience points
+// Tutorial
+// Goals: Battle with a random monster, attack the monster, open your inventory, use a potion, use a power up, defeat the monster
 
 
 public class ZoneOne extends Zone {
@@ -18,41 +18,40 @@ public class ZoneOne extends Zone {
     // make automated ZoneOne
     // creates the monster, that will attack 
     public void play(){
-	System.out.println("You are restless in the night. And drift off to sleep.");
-	System.out.println("You imagine the adventures that will potential take place!");
-	System.out.println("Your Camel and you are exploring the great DREAM DESERT.");
+	System.out.println("\nYour plane crash lands in a vast desert.\nYou are confused as to what has happened and where you are.\nYou try to traverse through the thick desert but its too hot and dry\nYou pass out!\nYou wake up to feeling of being carried and realize a camel is carrying you on its back!\nThe camel puts you down and looks at you. An immediate bond is formed.\nThe two of you begin to travel to the desert together!\n");
 	prompt();
     }
     
     public void prompt(){
 	if (chara.isAlive()){
-	    String prompt = "Choose your action:\n1 - Explore the desert\n2 - Check your inventory\n3 - Look up to the heavens\n4 - Talk to your sand steed\n\nMoves made so far: " + moves + "\n";
+	    String prompt = "\nChoose your action:\n1 - Explore the desert\n2 - Check your inventory\n3 - Look up to the heavens\n4 - Talk to your sand steed\n\nMoves made so far: " + moves + "\n\nTp Left: " + chara.getTp() + "!\nEach move costs 5 Tp, remember that! Hit 0 and you will die!\n";
 	    System.out.println(prompt);
 	    String input = Keyboard.readString();
 	    if (input.equals("1")){
 		if (moves < length){
 		    attacked();
-		prompt();
+		    chara.lowertp(5);
+		    prompt();
 		}
 		else{
 		    exit();
 		}
 	    }	
 	    else if (input.equals("2")){
-		System.out.println("You ruffle through your bag.");
+		System.out.println("\nYou ruffle through your bag.\n");
 		Inventory invent = new Inventory();
 		prompt();
 	    }
 	    else if (input.equals("3")){
-		System.out.println("The heavens spell out in Comic Sans font:\n \" Lol m8 you tried \"");
+		System.out.println("\nThe heavens spell out in Comic Sans font:\n \" Lol m8 you tried \"\n");
 		prompt();
 	    }
 	    else if (input.equals("4")){
-		System.out.println("The camel is silent");
+		System.out.println("\n" + camelDia() + "\n");
 		prompt();
 	    }
 	else {
-	    System.out.println("Try again");
+	    System.out.println("\nTry again\n");
 	    prompt();
 	}
 	}
@@ -61,18 +60,35 @@ public class ZoneOne extends Zone {
 	}
     }   
     
+    public String camelDia(){
+	double rng = Math.random() * 100;
+	if (rng < 20){
+	    return "The camel smiles at you and nudges you foward.";
+	}
+	else if (rng < 40){
+	    return "The camel smiles at you with a tired face.";
+	}
+	else if (rng < 60){
+	    return "The camel winks at you and looks foward";
+	}
+	else if (rng < 80){
+	    return "The camel does a little dance to entertain you";
+	}
+	else{
+	    return "The camel looks at you silently";
+	}
+    }
+    
     public void attacked(){	
-	System.out.println("What is that! A Sand Beatle appears!");
-	Monster en = new M_Sandbeetle(); 
-	System.out.println("You are going to need to fight.");
+	Monster en = new M_Sandbeetle();
+	System.out.println("\nWhat is that! A " + en + " appears!\n");
+	System.out.println("\nYou are going to need to fight.\n");
 	chara.battle(en);
 	moves++;
     }
 
     public void exit(){
-	System.out.println("You are weary from your first encounter with danger. The sun beats down on you. You close your eyes.");
-	System.out.println("You are ready to begin...");
-	System.out.println("SANDSTORY 3D!");
+	System.out.println("\nYou are weary from your first encounters with danger. The sun beats down on you. You close your eyes.\nYou wake up on your camel's back and seem to have arrived to a town!\n");
 	Town firstTown = new TownOne(chara);
 	firstTown.play();
     }

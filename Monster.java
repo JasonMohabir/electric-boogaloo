@@ -47,9 +47,9 @@ public abstract class Monster {
 	    return;
 	}
 	if (isBurned == true){
-	    dmg = Math.random() * 3;
+	    dmg = 1 + Math.random() * 3;
 	    lowerHp((int)dmg);
-	    System.out.println("The enemy is burned and takes " + dmg + " Damage");
+	    System.out.println("The enemy is burned and takes " + (int)dmg + " Damage");
 	    if (Math.random() * 100 < 70){
 		statusChange("UnBurned");
 		System.out.println("The enemy estinguishes fire");
@@ -60,9 +60,9 @@ public abstract class Monster {
 	    
 	}
 	if (isPoisoned == true){
-	    dmg = Math.random() * 3;
+	    dmg = 1 + Math.random() * 3;
 	    lowerHp((int)dmg);
-	    System.out.println("The enemy is poisoned and takes " + dmg + " Damage");
+	    System.out.println("The enemy is poisoned and takes " + (int)dmg + " Damage");
 	    if (Math.random() * 100 < 70){
 		statusChange("UnPoisoned");
 		System.out.println("The enemy fights off the poison");
@@ -73,9 +73,9 @@ public abstract class Monster {
 	    
 	}
 	if (isBleeding == true){
-	    dmg = Math.random() * 3;
+	    dmg = 1 + Math.random() * 3;
 	    lowerHp((int)dmg);
-	    System.out.println("The enemy is bleeding and takes " + dmg + " Damage");
+	    System.out.println("The enemy is bleeding and takes " + (int)dmg + " Damage");
 	    if (Math.random() * 100 < 70){
 		statusChange("UnBleeding");
 		System.out.println("The enemy stops the bleeding");
