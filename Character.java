@@ -3,11 +3,19 @@
 public abstract class Character {
 
     protected int hp, str, tp, end, intl, spd, luck, spmp;
+    protected int diff; 
     protected String name;
 
     public void fullHeal(){
     }
     
+    public void setDiff(int d){
+	diff = d;
+    }
+
+    public int getDiff(){
+	return diff;
+    }
     public boolean dodgechance(){
 	return (Math.random() * 100 < (spd + 5) );
 	    }

@@ -137,11 +137,13 @@ public class sandstory{
 	if (classnum == 3){
 	    chrtr = new Rogue(name);
 	}
+	chrtr.setDiff(difficulty);
 	setStats(chrtr);
     }
 
 
     public  void choosedif(){
+	System.out.println("\nSelect difficulty\nThe difficulty determines the length of the game and the number of  battles you engage in. Higher difficulties mean more enounters, making the game harder to beat, but also more fun to play\n\n 1 - Easy - For beginners playing for the first time\n 2 - Medium - For a moderate challenge\n 3 - Hard - Possibly frustratibly difficult\n 4 - Humpless Camel - We haven't even beaten this difficulty!");
 	String input = Keyboard.readString();
 	if (input.equals("1")){
 	    difficulty = 1;
@@ -156,8 +158,7 @@ public class sandstory{
 	    difficulty = 4;
 	}
 	else{
-	    System.out.println("invalid input\n\n");
-	    System.out.println("Okay boss. Select difficulty:\n 1 - Easy\n 2 - Medium\n 3 - Hard\n 4 - Humpless Camel\n\n");
+	    System.out.println("\ninvalid input\n");
 	    choosedif();
 	}
     }
@@ -165,7 +166,6 @@ public class sandstory{
     public  void start(){
 	String input = Keyboard.readString();
 	if (input.equals("Start")){
-	    System.out.println("Okay boss. Select difficulty:\n 1 - Easy\n 2 - Medium\n 3 - Hard\n 4 - Humpless Camel");
 	    choosedif();
 	}
 	else{

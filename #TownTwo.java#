@@ -1,8 +1,7 @@
-
-
 import cs1.Keyboard;
 public class TownTwo extends Town {
     Character chara;
+    int diff;
     
     public TownTwo(Character ch){
 	chara = ch;

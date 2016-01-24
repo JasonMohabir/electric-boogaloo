@@ -12,6 +12,7 @@ public class ZoneOne extends Zone {
 
     public ZoneOne(Character ch){
 	chara = ch;
+	length = ch.getDiff();
     }
 
     // make automated ZoneOne
@@ -28,7 +29,7 @@ public class ZoneOne extends Zone {
 	System.out.println(prompt);
 	String input = Keyboard.readString();
 	if (input.equals("1")){
-	    if (moves < 1){
+	    if (moves < length){
 		attacked();
 		prompt();
 	    }
@@ -58,7 +59,7 @@ public class ZoneOne extends Zone {
 
     public void attacked(){	
 	System.out.println("What is that! A Sand Beatle appears!");
-	Monster en = new Sandbeetle(); 
+	Monster en = new M_Sandbeetle(); 
 	System.out.println("You are going to need to fight.");
 	chara.battle(en);
 	moves++;

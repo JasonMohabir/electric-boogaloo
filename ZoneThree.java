@@ -51,7 +51,7 @@ public class ZoneThree extends Zone {
 
     public void attacked(){
 	System.out.println("What is that! A Sand Beatle appears!");
-	Monster en = new Sandbeetle(); 
+	Monster en = new M_Sandbeetle(); 
 	System.out.println("You are going to need to fight.");
 	chara.battle(en);
 	moves++;

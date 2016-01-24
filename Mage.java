@@ -67,7 +67,7 @@ public class Mage extends Character{
 	}
 	else{
 	    double dmg;
-	    this.lowerspmp(30);
+	    this.lowerspmp(60);
 	    dmg = (.9 + Math.random() * 1.2)*((intl * .5) + (str * .2) + (luck * .04));
 	    m.lowerHp((int)dmg);
 	    System.out.println("Your Icestrike does " + dmg + " Damage\n");

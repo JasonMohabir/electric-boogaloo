@@ -1,6 +1,6 @@
-public class Sandbeetle extends Monster{
+public class M_Sandbeetle extends Monster{
     
-    public Sandbeetle(){
+    public M_Sandbeetle(){
 	hp = 50;
 	str = 1;
 	end = 1;
