@@ -1,7 +1,7 @@
 public class M_Sandbeetle extends Monster{
     
     public M_Sandbeetle(){
-	hp = 50;
+	hp = 5;
 	str = 1;
 	end = 1;
 	intl = 1;

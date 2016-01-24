@@ -22,19 +22,19 @@ public class TownFive extends Town {
 	    System.out.println("Under development");
 	    prompt();
 	}
-	if (input.equals("2")){
+	else if (input.equals("2")){
 	    System.out.println("Under development");
 	    prompt();
 	}
-	if (input.equals("3")){
+	else if (input.equals("3")){
 	    System.out.println("Under development");
 	    prompt();
 	}
-	if (input.equals("4")){
+	else if (input.equals("4")){
 	    System.out.println("Under development");
 	    prompt();
 	}
-	if (input.equals("5")){
+	else if (input.equals("5")){
 	    exit();
 	}
 	else {
@@ -44,6 +44,7 @@ public class TownFive extends Town {
     }   
 
    public void exit(){
-       System.out.println("You doth had reached the end of the game");
+       Prologue ending = new Prologue(chara);
+       ending.play();
     }
 }

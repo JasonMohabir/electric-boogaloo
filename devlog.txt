@@ -51,3 +51,4 @@ SS = Sandstory
 
 ~/--------------------------------------------[Saturday 1/23/16]-----------------------------------------------------/~
 -SA added the endings
+-SA fixed the game flow so it ended after the endings!

@@ -32,16 +32,16 @@ public class ZoneTwo extends Zone {
 	    }
 	}
 
-	if (input.equals("2")){
+	else if (input.equals("2")){
 	    System.out.println("You ruffle through your bag.");
 	    // inventoryDisplay();
 	    prompt();
 	}
-	if (input.equals("3")){
+	else if (input.equals("3")){
 	    System.out.println("The heavens spell out in Comic Sans font:\n \" Lol m8 you tried \"");
 	    prompt();
 	}
-	if (input.equals("4")){
+	else if (input.equals("4")){
 	    System.out.println("The camel is silent");
 	    prompt();
 	}

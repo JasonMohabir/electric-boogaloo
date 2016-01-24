@@ -37,17 +37,17 @@ public class ZoneOne extends Zone {
 		exit();
 	    }
 	}	
-	if (input.equals("2")){
+	else if (input.equals("2")){
 	    System.out.println("You ruffle through your bag.");
 	    Inventory invent = new Inventory();
 	    //invent.addItem("Crimson Dagger", 1);
 	    prompt();
 	}
-	if (input.equals("3")){
+	else if (input.equals("3")){
 	    System.out.println("The heavens spell out in Comic Sans font:\n \" Lol m8 you tried \"");
 	    prompt();
 	}
-	if (input.equals("4")){
+	else if (input.equals("4")){
 	    System.out.println("The camel is silent");
 	    prompt();
 	}
@@ -63,8 +63,6 @@ public class ZoneOne extends Zone {
 	System.out.println("You are going to need to fight.");
 	chara.battle(en);
 	moves++;
-	prompt();
-	
     }
 
     public void exit(){

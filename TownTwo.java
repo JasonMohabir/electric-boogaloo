@@ -22,20 +22,20 @@ public class TownTwo extends Town {
 	    System.out.println("Under development");
 	    prompt();
 	}
-	if (input.equals("2")){
+	else if (input.equals("2")){
 	    System.out.println("Under development");
 	    // inventoryDisplay();
 	    prompt();
 	}
-	if (input.equals("3")){
+	else if (input.equals("3")){
 	    System.out.println("Under development");
 	    prompt();
 	}
-	if (input.equals("4")){
+	else if (input.equals("4")){
 	    System.out.println("Under development");
 	    prompt();
 	}
-	if (input.equals("5")){
+	else if (input.equals("5")){
 	    exit();
 	}
 	else {
