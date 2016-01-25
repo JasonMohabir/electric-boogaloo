@@ -6,10 +6,12 @@ import cs1.Keyboard;
 
 public class ZoneTwo extends Zone {
     Character chara;
+    Inventory inventory;
     private int moves = 0;
 
-    public ZoneTwo(Character ch){
+    public ZoneTwo(Character ch, Inventory invent){
 	chara = ch;
+	inventory = invent;
 	length = ch.getDiff() * 2;
     }
 
@@ -38,11 +40,14 @@ public class ZoneTwo extends Zone {
 		    exit();
 		    }
 	    }	
+
 	    else if (input.equals("2")){
 		System.out.println("You ruffle through your bag.");
-		Inventory invent = new Inventory();
+		inventory.prompt(chara);
 		prompt();
 	    }
+	    
+
 		else if (input.equals("3")){
 		    System.out.println("The heavens spell out in Comic Sans font:\n \" Lol m8 you tried \"");
 		    prompt();
@@ -109,7 +114,7 @@ public class ZoneTwo extends Zone {
 	System.out.println("You are weary from your first encounter with danger. The sun beats down on you. You close your eyes.");
 	System.out.println("You are ready to begin...");
 	System.out.println("SANDSTORY 3D!");
-	Town secTown = new TownTwo(chara);
+	Town secTown = new TownTwo(chara,inventory);
 	secTown.play();
     }
 }

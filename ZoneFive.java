@@ -6,10 +6,12 @@ import cs1.Keyboard;
 
 public class ZoneFive extends Zone {
     Character chara;
+    Inventory inventory;
     private int moves = 0;
 
-    public ZoneFive(Character ch){
+    public ZoneFive(Character ch, Inventory invent){
 	chara = ch;
+	inventory = invent;
 	length = ch.getDiff() * 5;
     }
 
@@ -107,10 +109,7 @@ public class ZoneFive extends Zone {
 
 
     public void exit(){
-	System.out.println("You are weary from your first encounter with danger. The sun beats down on you. You close your eyes.");
-	System.out.println("You are ready to begin...");
-	System.out.println("SANDSTORY 3D!");
-	Town fifthTown = new TownFive(chara);
+	Town fifthTown = new TownFive(chara,inventory);
 	fifthTown.play();
     }
 }

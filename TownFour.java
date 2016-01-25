@@ -2,8 +2,10 @@
 import cs1.Keyboard;
 public class TownFour extends Town {
     Character chara;
-    public TownFour(Character ch){
+    Inventory inventory;
+    public TownFour(Character ch, Inventory invent){
 	chara = ch;
+	inventory = invent;
     }
     
     public void play(){
@@ -45,7 +47,7 @@ public class TownFour extends Town {
 
    public void exit(){
        System.out.println("You move onto the next Zone, Zone Five");
-       Zone z5 = new ZoneFive(chara);
+       Zone z5 = new ZoneFive(chara,inventory);
        z5.play();
     }
 

@@ -7,7 +7,7 @@ import cs1.Keyboard;
 
 public class ZoneOne extends Zone {
     Character chara;
-    Inventory invent; 
+    Inventory inventory;
     private int moves = 0;
 
     public ZoneOne(Character ch){
@@ -89,8 +89,12 @@ public class ZoneOne extends Zone {
 
     public void exit(){
 	System.out.println("\nYou are weary from your first encounters with danger. The sun beats down on you. You close your eyes.\nYou wake up on your camel's back and seem to have arrived to a town!\n");
-	Town firstTown = new TownOne(chara);
+	Town firstTown = new TownOne(chara,inventory);
 	firstTown.play();
+    }
+
+    public Inventory getInventory(){
+	return inventory;
     }
 }
 

@@ -3,12 +3,13 @@
 import cs1.Keyboard;
 public class TownFive extends Town {
     Character chara;
-    public TownFive(Character ch){
+    public TownFive(Character ch, Inventory invent){
 	chara = ch;
+	inventory = invent;
     }
 
     public void play(){
-	System.out.println("You enter the town of THUNTHUNATHUN. Few residents are around, but hopefully you can get on your way.");
+	System.out.println("You enter the town of REPLETE. Few residents are around, but hopefully you can get on your way.");
 	System.out.println("You should probably explore the TAVERN");
 	prompt();
     }

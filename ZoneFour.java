@@ -6,19 +6,16 @@ import cs1.Keyboard;
 
 public class ZoneFour extends Zone {
     Character chara;
-    private int moves = 0;
+    Inventory inventory;
+  
 
-    public ZoneFour(Character ch){
+    public ZoneFour(Character ch, Inventory inventory){
 	chara = ch;
 	length = ch.getDiff() * 4;
     }
 
-    // make automated ZoneOne
     // creates the monster, that will attack 
     public void play(){
-	System.out.println("You are restless in the night. And drift off to sleep.");
-	System.out.println("You imagine the adventures that will potential take place!");
-	System.out.println("Your Camel and you are exploring the great DREAM DESERT.");
 	prompt();
     }
 
@@ -106,12 +103,8 @@ public class ZoneFour extends Zone {
 	moves++;
     }
 
-
     public void exit(){
-	System.out.println("You are weary from your first encounter with danger. The sun beats down on you. You close your eyes.");
-	System.out.println("You are ready to begin...");
-	System.out.println("SANDSTORY 3D!");
-	Town fourthTown = new TownFour(chara);
+	Town fourthTown = new TownFour(chara,inventory);
 	fourthTown.play();
     }
 }

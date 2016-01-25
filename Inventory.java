@@ -103,4 +103,33 @@ public class Inventory {
 	return retStr;
     }	
 
+    //accessors and mutators
+
+    public void addPotionCount(int n){
+	Potion.setCount(Potion.getCount() + n);
+    }
+    public void addCanteenCount(int n){
+	Canteen.setCount(Canteen.getCount() +n);
+    }
+    public void addCoinpurseCount(int n){
+	Coinpurse.setCount(Coinpurse.getCount() + n);
+    }
+    
+    public int getPotionCount(){
+	return Potion.getCount();
+    }
+    
+    public int getCanteentCount(){
+	return Canteen.getCount();
+    }
+    
+    public int getCoinpurseCount(){
+	return Coinpurse.getCount();
+    }
+
+    public ArrayList<Item> getInventory(){
+	return inventory;
+    }
+    
+
 }
