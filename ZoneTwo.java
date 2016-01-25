@@ -111,9 +111,6 @@ public class ZoneTwo extends Zone {
     }
 
     public void exit(){
-	System.out.println("You are weary from your first encounter with danger. The sun beats down on you. You close your eyes.");
-	System.out.println("You are ready to begin...");
-	System.out.println("SANDSTORY 3D!");
 	Town secTown = new TownTwo(chara,inventory);
 	secTown.play();
     }

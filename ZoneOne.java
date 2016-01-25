@@ -59,7 +59,9 @@ public class ZoneOne extends Zone {
 	    died();
 	}
     }   
-    
+
+
+    // Unused feature     
     public String camelDia(){
 	double rng = Math.random() * 100;
 	if (rng < 20){

@@ -23,9 +23,10 @@ public class TownFour extends Town {
 	    System.out.println("Under development");
 	    prompt();
 	}
+
 	else if (input.equals("2")){
-	    System.out.println("Under development");
-	    // inventoryDisplay();
+	    System.out.println("You ruffle through your bag.");
+	    inventory.prompt(chara);
 	    prompt();
 	}
 	else if (input.equals("3")){

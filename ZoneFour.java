@@ -38,6 +38,7 @@ public class ZoneFour extends Zone {
 	    else if (input.equals("2")){
 		System.out.println("You ruffle through your bag.");
 		Inventory invent = new Inventory();
+		invent.prompt();
 		prompt();
 	    }
 	    else if (input.equals("3")){

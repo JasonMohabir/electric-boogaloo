@@ -23,10 +23,13 @@ public class TownFive extends Town {
 	    System.out.println("Under development");
 	    prompt();
 	}
+
 	else if (input.equals("2")){
-	    System.out.println("Under development");
+	    System.out.println("You ruffle through your bag.");
+	    inventory.prompt(chara);
 	    prompt();
 	}
+
 	else if (input.equals("3")){
 	    System.out.println("Under development");
 	    prompt();

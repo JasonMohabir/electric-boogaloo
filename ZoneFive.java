@@ -37,11 +37,7 @@ public class ZoneFive extends Zone {
 		    exit();
 		}
 	    }	
-	    else if (input.equals("2")){
-		System.out.println("You ruffle through your bag.");
-		Inventory invent = new Inventory();
-		prompt();
-	    }
+
 	    else if (input.equals("3")){
 		System.out.println("The heavens spell out in Comic Sans font:\n \" Lol m8 you tried \"");
 		prompt();

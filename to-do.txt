@@ -6,11 +6,11 @@ DL = Deadline
 
 // Ranked from most important to least
 1. Finish the game...
-2. Implement inventory system (DL: 1/20)
+2. Implement inventory system (DL: 1/20) [Done]
    2a. Utilize ArrayList 
    2b. Profit!
-3. Make Plot (DL: 1/19)
-   3a. Make 3 distinct enemies (DL: 1/19)
+3. Make Plot (DL: 1/19) [Late]
+   3a. Make 3 distinct enemies (DL: 1/19) [Done]
 4. Create Equipables & Consumables (DL: 1/20)
 5. Finish ZoneOne (DL: 1/19)
    5a. Update battle system

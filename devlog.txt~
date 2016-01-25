@@ -45,7 +45,6 @@ SS = Sandstory
 ~/--------------------------------------------[Thursday 1/21/16]-----------------------------------------------------/~
 -SA made the skill presets
 -SA added 3 new skills to each class along with 6 new status ailments
--JM updated all of the Zones to contain the inventory system
 
 ~/--------------------------------------------[Friday 1/22/16]-----------------------------------------------------/~
 -SA added dodging to the character
@@ -53,9 +52,7 @@ SS = Sandstory
 ~/--------------------------------------------[Saturday 1/23/16]-----------------------------------------------------/~
 -SA added the endings
 -SA fixed the game flow so it ended after the endings!
--JM fixed some grammar issues
 
 ~/--------------------------------------------[Sunday 1/24/16]-----------------------------------------------------/~
 -SA added the new Oasis and SuperOasis encounter system
 -SA added new enemies and randomized battle settings
--JM made the final possible updates to the inventory system and started the differentiation of all zones
