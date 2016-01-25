@@ -10,7 +10,7 @@ public class ZoneThree extends Zone {
 
     public ZoneThree(Character ch, Inventory invent){
 	chara = ch;
-	inventory = invent
+	inventory = invent;
 	length = ch.getDiff() * 3;
     }
 

@@ -45,9 +45,9 @@ public class TownTwo extends Town {
 	    prompt();
 	}
     }
-
-       System.out.println("You move onto the next Zone, Zone Three");
+	public void exit(){
+    System.out.println("You move onto the next Zone, Zone Three");
     Zone z3 = new ZoneThree(chara,inventory);
        z3.play();
-    }
+	}
 }

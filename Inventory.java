@@ -61,10 +61,10 @@ public class Inventory {
 	System.out.println("Here is your inventory:");
 	System.out.println(toString());
 	String prompt = "\nChoose your action:\n1 - Use a potion (restore hp)\n2 - Drink some water (restore tp)\n3 - Exit";
-	    System.out.println(prompt);
-	String input = Keyboard.readString();
+	System.out.println(prompt);
+	int input = Keyboard.readInt();
 	switch(input){
-	case "1": 
+	case 1: 
 	    if (Potion.getCount() > 0){
 		Potion.setCount(Potion.getCount()-1);
 	    c.incspmp(50);
@@ -74,7 +74,7 @@ public class Inventory {
 		System.out.println("You don't have any more potions!");
 	    }
 	    prompt(c);
-	case "2": 
+	case 2: 
 	    System.out.println("How much water do you want to consume?");
 	    int wateramt = Keyboard.readInt();
 	    if (Canteen.getCount() >= wateramt){
@@ -86,7 +86,7 @@ public class Inventory {
 		System.out.println("You don't have enough water!");
 	    }
 	    prompt(c);
-	case "3": 
+	case 3: 
 	    break;
 	default:
 	    System.out.println("Try again!");

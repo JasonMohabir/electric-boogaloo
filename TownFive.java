@@ -3,6 +3,7 @@
 import cs1.Keyboard;
 public class TownFive extends Town {
     Character chara;
+    Inventory inventory;
     public TownFive(Character ch, Inventory invent){
 	chara = ch;
 	inventory = invent;

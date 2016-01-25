@@ -7,10 +7,11 @@ import cs1.Keyboard;
 public class ZoneFour extends Zone {
     Character chara;
     Inventory inventory;
-  
+    int moves = 0;
 
-    public ZoneFour(Character ch, Inventory inventory){
+    public ZoneFour(Character ch, Inventory invent){
 	chara = ch;
+	inventory = invent;
 	length = ch.getDiff() * 4;
     }
 
@@ -35,11 +36,10 @@ public class ZoneFour extends Zone {
 		    exit();
 		}
 	    }	
-	    else if (input.equals("2")){
-		System.out.println("You ruffle through your bag.");
-		Inventory invent = new Inventory();
-		invent.prompt();
-		prompt();
+            else if (input.equals("2")){
+                System.out.println("You ruffle through your bag.");
+                inventory.prompt(chara);
+                prompt();
 	    }
 	    else if (input.equals("3")){
 		System.out.println("The heavens spell out in Comic Sans font:\n \" Lol m8 you tried \"");
@@ -57,7 +57,7 @@ public class ZoneFour extends Zone {
 	else{
 	    died();
 	}
-    }
+ }
      
 
   public void encounter(){
@@ -108,8 +108,7 @@ public class ZoneFour extends Zone {
 	Town fourthTown = new TownFour(chara,inventory);
 	fourthTown.play();
     }
+ 
 }
-
-
 
 
