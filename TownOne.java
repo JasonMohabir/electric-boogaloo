@@ -29,7 +29,7 @@ public class TownOne extends Town {
 		if (moves == 0) {
 		    System.out.println("JASON is a bit jittery, as he didn't get alot of sleep for the past few nights, but he looks proud to see you.");
 		    System.out.println("\"I am sorry I could not give your camel higher intelligence. It was simply too large of a task to accomplish.\", he whispers.");
-		    inventory.addCoinpurseCount(1000);
+		    //inventory.addCoinpurseCount(1000);
 		    System.out.println("The invisible hand provides you with worthless currency.");
 		    System.out.println("He vanishes.");}
 		else {
