@@ -39,8 +39,8 @@ public class ZoneOne extends Zone {
 	    }	
 	    else if (input.equals("2")){
 		System.out.println("\nYou ruffle through your bag.\n");
-		Inventory invent = new Inventory();
-		prompt();
+		Inventory inventory = new Inventory();
+		inventory.prompt(chara);
 	    }
 	    else if (input.equals("3")){
 		System.out.println("\nThe heavens spell out in Comic Sans font:\n \" Lol m8 you tried \"\n");
